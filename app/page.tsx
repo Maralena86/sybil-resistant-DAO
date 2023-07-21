@@ -5,7 +5,7 @@ import { configureChains, createConfig, WagmiConfig } from 'wagmi'
 import { arbitrum, mainnet, polygon, goerli } from 'wagmi/chains'
 
 const chains = [arbitrum, mainnet, polygon, goerli]
-const projectId = '91c0353f17b535b32824d5df3a07418a'
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
 const wagmiConfig = createConfig({
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between p-6">
       <WagmiConfig config={wagmiConfig} >
-        <Web3Button/>
+        <Web3Button />
       </WagmiConfig>
       <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
     </main>
