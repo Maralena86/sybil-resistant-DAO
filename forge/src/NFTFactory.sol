@@ -110,7 +110,7 @@ contract NFTFactory is ERC721Enumerable, Ownable {
         Address.sendValue(_artist, half);
     }
 
-    function mintTo(uint256 num, address addr) external payable onlyOwner {
+    function mintTo(uint256 num, address addr) external payable {
         for (uint256 i; i < num; i++) {
             _safeMint(addr, i);
         }
