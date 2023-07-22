@@ -1,0 +1,7 @@
+{
+  "transactions": [
+    {
+      "rpc": "https://linea-goerli.infura.io/v3/bd4c9b58db0544ecadf0f04608cb0eb8"
+    }
+  ]
+}
