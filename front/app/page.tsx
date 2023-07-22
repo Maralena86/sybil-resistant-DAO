@@ -23,7 +23,7 @@ const wagmiConfig = createConfig({
 const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
 export default function Home() {
-	const [modal, setModal] = useState(true);
+	const [modal, setModal] = useState(false);
 	return (
 		<>
 			<WagmiConfig config={wagmiConfig}>
