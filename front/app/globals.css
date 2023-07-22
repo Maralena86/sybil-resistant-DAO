@@ -51,6 +51,10 @@ body {
 .card-button:hover{
   background: linear-gradient(rgb(69, 123, 139), rgb(30, 103, 127));
 }
+button:disabled, button:hover:disabled {
+  background: linear-gradient(rgb(119, 119, 120), rgb(126, 127, 127)) ;
+  color: #282a2a;
+}
 .img-shield{
   height: 100%;
   width:150px;
