@@ -10,11 +10,11 @@ export function Card() {
 				<Image src="/sismo.png" width={30} height={30} alt="Gitcoin" />
 			</div>
 			<div className="mt-8 text-center">
-				<p className="text-xl font-semibold my-2">
+				<p className="sm:text-xl font-semibold my-2 text-sky-200">
 					Join the Sybil Resitant DAO
 				</p>
 				<div className="py-6">
-					<div className="flex space-x-2   ">
+					<div className="flex space-x-2">
 						<p>Score</p>
 					</div>
 					<div className="flex text-gray-400">

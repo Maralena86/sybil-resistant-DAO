@@ -27,7 +27,7 @@ body {
   justify-content: space-between;
 }
 .card{
-  background-image: linear-gradient( rgb(32 36 37), rgb(44 52 52));
+  background-image: linear-gradient( rgb(32 36 37), rgb(31 44 44));
 }
 .card-icon{
   background-image: linear-gradient(black, rgb(41, 44, 46) );
