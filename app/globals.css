@@ -18,16 +18,20 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background:linear-gradient( rgb(65, 82, 93), black, rgb(51, 56, 60))
+  background: #BBD2C5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #292E49, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  min-height:100vh;
 }
 .card{
-  background-image: linear-gradient( rgb(3, 29, 52), rgb(25, 61, 86));
+  background-image: linear-gradient( rgb(32 36 37), rgb(44 52 52));
 }
 .card-icon{
-  background-image: linear-gradient(rgb(124, 110, 128), rgb(20, 80, 123) );
+  background-image: linear-gradient(black, rgb(41, 44, 46) );
 }
 .card-button{
-  background-image: linear-gradient(black, rgb(2, 40, 73));
+  background-image: linear-gradient(rgb(34 103 153), rgb(42 70 91));
   margin: 0 auto;
   padding: 0.4rem 4rem; 
   border-radius: 10px;

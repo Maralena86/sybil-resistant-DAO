@@ -4,7 +4,7 @@ import Link from 'next/link'
 export function Card() {
   return (
 
-        <div className="relative card py-12 px-12 rounded-3xl w-82 my-4 shadow-xl">
+        <div className="relative card py-6 px-6 rounded-3xl w-82 my-4 shadow-xl">
             <div className="  card-icon flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
                
             <Image
