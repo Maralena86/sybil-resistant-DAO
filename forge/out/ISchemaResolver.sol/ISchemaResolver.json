@@ -739,22 +739,22 @@
   },
   "ast": {
     "absolutePath": "lib/eas-contracts/contracts/resolver/ISchemaResolver.sol",
-    "id": 498,
+    "id": 448,
     "exportedSymbols": {
       "Attestation": [
-        95
+        45
       ],
       "ISchemaResolver": [
-        497
+        447
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "33:1818:4",
+    "src": "33:1818:3",
     "nodes": [
       {
-        "id": 443,
+        "id": 393,
         "nodeType": "PragmaDirective",
-        "src": "33:23:4",
+        "src": "33:23:3",
         "nodes": [],
         "literals": [
           "solidity",
@@ -764,23 +764,23 @@
         ]
       },
       {
-        "id": 445,
+        "id": 395,
         "nodeType": "ImportDirective",
-        "src": "58:44:4",
+        "src": "58:44:3",
         "nodes": [],
         "absolutePath": "lib/eas-contracts/contracts/Common.sol",
         "file": "../Common.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 498,
-        "sourceUnit": 112,
+        "scope": 448,
+        "sourceUnit": 62,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 444,
+              "id": 394,
               "name": "Attestation",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "67:11:4",
+              "src": "67:11:3",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -789,19 +789,19 @@
         "unitAlias": ""
       },
       {
-        "id": 497,
+        "id": 447,
         "nodeType": "ContractDefinition",
-        "src": "168:1682:4",
+        "src": "168:1682:3",
         "nodes": [
           {
-            "id": 452,
+            "id": 402,
             "nodeType": "FunctionDefinition",
-            "src": "281:50:4",
+            "src": "281:50:3",
             "nodes": [],
             "documentation": {
-              "id": 447,
+              "id": 397,
               "nodeType": "StructuredDocumentation",
-              "src": "200:76:4",
+              "src": "200:76:3",
               "text": " @dev Returns whether the resolver supports ETH transfers."
             },
             "functionSelector": "ce46e046",
@@ -809,26 +809,26 @@
             "kind": "function",
             "modifiers": [],
             "name": "isPayable",
-            "nameLocation": "290:9:4",
+            "nameLocation": "290:9:3",
             "parameters": {
-              "id": 448,
+              "id": 398,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "299:2:4"
+              "src": "299:2:3"
             },
             "returnParameters": {
-              "id": 451,
+              "id": 401,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 450,
+                  "id": 400,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 452,
-                  "src": "325:4:4",
+                  "scope": 402,
+                  "src": "325:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -836,10 +836,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 449,
+                    "id": 399,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "325:4:4",
+                    "src": "325:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -848,22 +848,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "324:6:4"
+              "src": "324:6:3"
             },
-            "scope": 497,
+            "scope": 447,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 461,
+            "id": 411,
             "nodeType": "FunctionDefinition",
-            "src": "533:82:4",
+            "src": "533:82:3",
             "nodes": [],
             "documentation": {
-              "id": 453,
+              "id": 403,
               "nodeType": "StructuredDocumentation",
-              "src": "337:191:4",
+              "src": "337:191:3",
               "text": " @dev Processes an attestation and verifies whether it's valid.\n @param attestation The new attestation.\n @return Whether the attestation is valid."
             },
             "functionSelector": "e60c3505",
@@ -871,61 +871,61 @@
             "kind": "function",
             "modifiers": [],
             "name": "attest",
-            "nameLocation": "542:6:4",
+            "nameLocation": "542:6:3",
             "parameters": {
-              "id": 457,
+              "id": 407,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 456,
+                  "id": 406,
                   "mutability": "mutable",
                   "name": "attestation",
-                  "nameLocation": "570:11:4",
+                  "nameLocation": "570:11:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 461,
-                  "src": "549:32:4",
+                  "scope": 411,
+                  "src": "549:32:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Attestation_$95_calldata_ptr",
+                    "typeIdentifier": "t_struct$_Attestation_$45_calldata_ptr",
                     "typeString": "struct Attestation"
                   },
                   "typeName": {
-                    "id": 455,
+                    "id": 405,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 454,
+                      "id": 404,
                       "name": "Attestation",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 95,
-                      "src": "549:11:4"
+                      "referencedDeclaration": 45,
+                      "src": "549:11:3"
                     },
-                    "referencedDeclaration": 95,
-                    "src": "549:11:4",
+                    "referencedDeclaration": 45,
+                    "src": "549:11:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Attestation_$95_storage_ptr",
+                      "typeIdentifier": "t_struct$_Attestation_$45_storage_ptr",
                       "typeString": "struct Attestation"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "548:34:4"
+              "src": "548:34:3"
             },
             "returnParameters": {
-              "id": 460,
+              "id": 410,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 459,
+                  "id": 409,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 461,
-                  "src": "609:4:4",
+                  "scope": 411,
+                  "src": "609:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -933,10 +933,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 458,
+                    "id": 408,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "609:4:4",
+                    "src": "609:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -945,22 +945,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "608:6:4"
+              "src": "608:6:3"
             },
-            "scope": 497,
+            "scope": 447,
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 474,
+            "id": 424,
             "nodeType": "FunctionDefinition",
-            "src": "917:139:4",
+            "src": "917:139:3",
             "nodes": [],
             "documentation": {
-              "id": 462,
+              "id": 412,
               "nodeType": "StructuredDocumentation",
-              "src": "621:291:4",
+              "src": "621:291:3",
               "text": " @dev Processes multiple attestations and verifies whether they are valid.\n @param attestations The new attestations.\n @param values Explicit ETH amounts which were sent with each attestation.\n @return Whether all the attestations are valid."
             },
             "functionSelector": "91db0b7e",
@@ -968,49 +968,49 @@
             "kind": "function",
             "modifiers": [],
             "name": "multiAttest",
-            "nameLocation": "926:11:4",
+            "nameLocation": "926:11:3",
             "parameters": {
-              "id": 470,
+              "id": 420,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 466,
+                  "id": 416,
                   "mutability": "mutable",
                   "name": "attestations",
-                  "nameLocation": "970:12:4",
+                  "nameLocation": "970:12:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 474,
-                  "src": "947:35:4",
+                  "scope": 424,
+                  "src": "947:35:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Attestation_$95_calldata_ptr_$dyn_calldata_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Attestation_$45_calldata_ptr_$dyn_calldata_ptr",
                     "typeString": "struct Attestation[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 464,
+                      "id": 414,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 463,
+                        "id": 413,
                         "name": "Attestation",
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 95,
-                        "src": "947:11:4"
+                        "referencedDeclaration": 45,
+                        "src": "947:11:3"
                       },
-                      "referencedDeclaration": 95,
-                      "src": "947:11:4",
+                      "referencedDeclaration": 45,
+                      "src": "947:11:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Attestation_$95_storage_ptr",
+                        "typeIdentifier": "t_struct$_Attestation_$45_storage_ptr",
                         "typeString": "struct Attestation"
                       }
                     },
-                    "id": 465,
+                    "id": 415,
                     "nodeType": "ArrayTypeName",
-                    "src": "947:13:4",
+                    "src": "947:13:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Attestation_$95_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Attestation_$45_storage_$dyn_storage_ptr",
                       "typeString": "struct Attestation[]"
                     }
                   },
@@ -1018,13 +1018,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 469,
+                  "id": 419,
                   "mutability": "mutable",
                   "name": "values",
-                  "nameLocation": "1011:6:4",
+                  "nameLocation": "1011:6:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 474,
-                  "src": "992:25:4",
+                  "scope": 424,
+                  "src": "992:25:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1033,18 +1033,18 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 467,
+                      "id": 417,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "992:7:4",
+                      "src": "992:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 468,
+                    "id": 418,
                     "nodeType": "ArrayTypeName",
-                    "src": "992:9:4",
+                    "src": "992:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -1053,21 +1053,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "937:86:4"
+              "src": "937:86:3"
             },
             "returnParameters": {
-              "id": 473,
+              "id": 423,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 472,
+                  "id": 422,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 474,
-                  "src": "1050:4:4",
+                  "scope": 424,
+                  "src": "1050:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1075,10 +1075,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 471,
+                    "id": 421,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1050:4:4",
+                    "src": "1050:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1087,22 +1087,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1049:6:4"
+              "src": "1049:6:3"
             },
-            "scope": 497,
+            "scope": 447,
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 483,
+            "id": 433,
             "nodeType": "FunctionDefinition",
-            "src": "1296:82:4",
+            "src": "1296:82:3",
             "nodes": [],
             "documentation": {
-              "id": 475,
+              "id": 425,
               "nodeType": "StructuredDocumentation",
-              "src": "1062:229:4",
+              "src": "1062:229:3",
               "text": " @dev Processes an attestation revocation and verifies if it can be revoked.\n @param attestation The existing attestation to be revoked.\n @return Whether the attestation can be revoked."
             },
             "functionSelector": "e49617e1",
@@ -1110,61 +1110,61 @@
             "kind": "function",
             "modifiers": [],
             "name": "revoke",
-            "nameLocation": "1305:6:4",
+            "nameLocation": "1305:6:3",
             "parameters": {
-              "id": 479,
+              "id": 429,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 478,
+                  "id": 428,
                   "mutability": "mutable",
                   "name": "attestation",
-                  "nameLocation": "1333:11:4",
+                  "nameLocation": "1333:11:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 483,
-                  "src": "1312:32:4",
+                  "scope": 433,
+                  "src": "1312:32:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Attestation_$95_calldata_ptr",
+                    "typeIdentifier": "t_struct$_Attestation_$45_calldata_ptr",
                     "typeString": "struct Attestation"
                   },
                   "typeName": {
-                    "id": 477,
+                    "id": 427,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 476,
+                      "id": 426,
                       "name": "Attestation",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 95,
-                      "src": "1312:11:4"
+                      "referencedDeclaration": 45,
+                      "src": "1312:11:3"
                     },
-                    "referencedDeclaration": 95,
-                    "src": "1312:11:4",
+                    "referencedDeclaration": 45,
+                    "src": "1312:11:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Attestation_$95_storage_ptr",
+                      "typeIdentifier": "t_struct$_Attestation_$45_storage_ptr",
                       "typeString": "struct Attestation"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1311:34:4"
+              "src": "1311:34:3"
             },
             "returnParameters": {
-              "id": 482,
+              "id": 432,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 481,
+                  "id": 431,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 483,
-                  "src": "1372:4:4",
+                  "scope": 433,
+                  "src": "1372:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1172,10 +1172,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 480,
+                    "id": 430,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1372:4:4",
+                    "src": "1372:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1184,22 +1184,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1371:6:4"
+              "src": "1371:6:3"
             },
-            "scope": 497,
+            "scope": 447,
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 496,
+            "id": 446,
             "nodeType": "FunctionDefinition",
-            "src": "1709:139:4",
+            "src": "1709:139:3",
             "nodes": [],
             "documentation": {
-              "id": 484,
+              "id": 434,
               "nodeType": "StructuredDocumentation",
-              "src": "1384:320:4",
+              "src": "1384:320:3",
               "text": " @dev Processes revocation of multiple attestation and verifies they can be revoked.\n @param attestations The existing attestations to be revoked.\n @param values Explicit ETH amounts which were sent with each revocation.\n @return Whether the attestations can be revoked."
             },
             "functionSelector": "88e5b2d9",
@@ -1207,49 +1207,49 @@
             "kind": "function",
             "modifiers": [],
             "name": "multiRevoke",
-            "nameLocation": "1718:11:4",
+            "nameLocation": "1718:11:3",
             "parameters": {
-              "id": 492,
+              "id": 442,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 488,
+                  "id": 438,
                   "mutability": "mutable",
                   "name": "attestations",
-                  "nameLocation": "1762:12:4",
+                  "nameLocation": "1762:12:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 496,
-                  "src": "1739:35:4",
+                  "scope": 446,
+                  "src": "1739:35:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Attestation_$95_calldata_ptr_$dyn_calldata_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Attestation_$45_calldata_ptr_$dyn_calldata_ptr",
                     "typeString": "struct Attestation[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 486,
+                      "id": 436,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 485,
+                        "id": 435,
                         "name": "Attestation",
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 95,
-                        "src": "1739:11:4"
+                        "referencedDeclaration": 45,
+                        "src": "1739:11:3"
                       },
-                      "referencedDeclaration": 95,
-                      "src": "1739:11:4",
+                      "referencedDeclaration": 45,
+                      "src": "1739:11:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Attestation_$95_storage_ptr",
+                        "typeIdentifier": "t_struct$_Attestation_$45_storage_ptr",
                         "typeString": "struct Attestation"
                       }
                     },
-                    "id": 487,
+                    "id": 437,
                     "nodeType": "ArrayTypeName",
-                    "src": "1739:13:4",
+                    "src": "1739:13:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Attestation_$95_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Attestation_$45_storage_$dyn_storage_ptr",
                       "typeString": "struct Attestation[]"
                     }
                   },
@@ -1257,13 +1257,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 491,
+                  "id": 441,
                   "mutability": "mutable",
                   "name": "values",
-                  "nameLocation": "1803:6:4",
+                  "nameLocation": "1803:6:3",
                   "nodeType": "VariableDeclaration",
-                  "scope": 496,
-                  "src": "1784:25:4",
+                  "scope": 446,
+                  "src": "1784:25:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1272,18 +1272,18 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 489,
+                      "id": 439,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1784:7:4",
+                      "src": "1784:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 490,
+                    "id": 440,
                     "nodeType": "ArrayTypeName",
-                    "src": "1784:9:4",
+                    "src": "1784:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -1292,21 +1292,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1729:86:4"
+              "src": "1729:86:3"
             },
             "returnParameters": {
-              "id": 495,
+              "id": 445,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 494,
+                  "id": 444,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 496,
-                  "src": "1842:4:4",
+                  "scope": 446,
+                  "src": "1842:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1314,10 +1314,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 493,
+                    "id": 443,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1842:4:4",
+                    "src": "1842:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1326,9 +1326,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1841:6:4"
+              "src": "1841:6:3"
             },
-            "scope": 497,
+            "scope": 447,
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
@@ -1339,22 +1339,22 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 446,
+          "id": 396,
           "nodeType": "StructuredDocumentation",
-          "src": "104:63:4",
+          "src": "104:63:3",
           "text": " @title The interface of an optional schema resolver."
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          497
+          447
         ],
         "name": "ISchemaResolver",
-        "nameLocation": "178:15:4",
-        "scope": 498,
+        "nameLocation": "178:15:3",
+        "scope": 448,
         "usedErrors": []
       }
     ],
     "license": "MIT"
   },
-  "id": 4
+  "id": 3
 }

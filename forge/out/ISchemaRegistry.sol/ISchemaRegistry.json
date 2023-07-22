@@ -287,25 +287,25 @@
   },
   "ast": {
     "absolutePath": "lib/eas-contracts/contracts/ISchemaRegistry.sol",
-    "id": 442,
+    "id": 392,
     "exportedSymbols": {
       "ISchemaRegistry": [
-        441
+        391
       ],
       "ISchemaResolver": [
-        497
+        447
       ],
       "SchemaRecord": [
-        410
+        360
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "33:1454:3",
+    "src": "33:1454:2",
     "nodes": [
       {
-        "id": 398,
+        "id": 348,
         "nodeType": "PragmaDirective",
-        "src": "33:23:3",
+        "src": "33:23:2",
         "nodes": [],
         "literals": [
           "solidity",
@@ -315,23 +315,23 @@
         ]
       },
       {
-        "id": 400,
+        "id": 350,
         "nodeType": "ImportDirective",
-        "src": "58:65:3",
+        "src": "58:65:2",
         "nodes": [],
         "absolutePath": "lib/eas-contracts/contracts/resolver/ISchemaResolver.sol",
         "file": "./resolver/ISchemaResolver.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 442,
-        "sourceUnit": 498,
+        "scope": 392,
+        "sourceUnit": 448,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 399,
+              "id": 349,
               "name": "ISchemaResolver",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "67:15:3",
+              "src": "67:15:2",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -340,21 +340,21 @@
         "unitAlias": ""
       },
       {
-        "id": 410,
+        "id": 360,
         "nodeType": "StructDefinition",
-        "src": "198:285:3",
+        "src": "198:285:2",
         "nodes": [],
         "canonicalName": "SchemaRecord",
         "members": [
           {
             "constant": false,
-            "id": 402,
+            "id": 352,
             "mutability": "mutable",
             "name": "uid",
-            "nameLocation": "232:3:3",
+            "nameLocation": "232:3:2",
             "nodeType": "VariableDeclaration",
-            "scope": 410,
-            "src": "224:11:3",
+            "scope": 360,
+            "src": "224:11:2",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -362,10 +362,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 401,
+              "id": 351,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "224:7:3",
+              "src": "224:7:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -375,33 +375,33 @@
           },
           {
             "constant": false,
-            "id": 405,
+            "id": 355,
             "mutability": "mutable",
             "name": "resolver",
-            "nameLocation": "297:8:3",
+            "nameLocation": "297:8:2",
             "nodeType": "VariableDeclaration",
-            "scope": 410,
-            "src": "281:24:3",
+            "scope": 360,
+            "src": "281:24:2",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ISchemaResolver_$497",
+              "typeIdentifier": "t_contract$_ISchemaResolver_$447",
               "typeString": "contract ISchemaResolver"
             },
             "typeName": {
-              "id": 404,
+              "id": 354,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 403,
+                "id": 353,
                 "name": "ISchemaResolver",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 497,
-                "src": "281:15:3"
+                "referencedDeclaration": 447,
+                "src": "281:15:2"
               },
-              "referencedDeclaration": 497,
-              "src": "281:15:3",
+              "referencedDeclaration": 447,
+              "src": "281:15:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ISchemaResolver_$497",
+                "typeIdentifier": "t_contract$_ISchemaResolver_$447",
                 "typeString": "contract ISchemaResolver"
               }
             },
@@ -409,13 +409,13 @@
           },
           {
             "constant": false,
-            "id": 407,
+            "id": 357,
             "mutability": "mutable",
             "name": "revocable",
-            "nameLocation": "345:9:3",
+            "nameLocation": "345:9:2",
             "nodeType": "VariableDeclaration",
-            "scope": 410,
-            "src": "340:14:3",
+            "scope": 360,
+            "src": "340:14:2",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -423,10 +423,10 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 406,
+              "id": 356,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
-              "src": "340:4:3",
+              "src": "340:4:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_bool",
                 "typeString": "bool"
@@ -436,13 +436,13 @@
           },
           {
             "constant": false,
-            "id": 409,
+            "id": 359,
             "mutability": "mutable",
             "name": "schema",
-            "nameLocation": "420:6:3",
+            "nameLocation": "420:6:2",
             "nodeType": "VariableDeclaration",
-            "scope": 410,
-            "src": "413:13:3",
+            "scope": 360,
+            "src": "413:13:2",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -450,10 +450,10 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 408,
+              "id": 358,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "413:6:3",
+              "src": "413:6:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -463,43 +463,43 @@
           }
         ],
         "name": "SchemaRecord",
-        "nameLocation": "205:12:3",
-        "scope": 442,
+        "nameLocation": "205:12:2",
+        "scope": 392,
         "visibility": "public"
       },
       {
-        "id": 441,
+        "id": 391,
         "nodeType": "ContractDefinition",
-        "src": "541:945:3",
+        "src": "541:945:2",
         "nodes": [
           {
-            "id": 418,
+            "id": 368,
             "nodeType": "EventDefinition",
-            "src": "769:58:3",
+            "src": "769:58:2",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 412,
+              "id": 362,
               "nodeType": "StructuredDocumentation",
-              "src": "573:191:3",
+              "src": "573:191:2",
               "text": " @dev Emitted when a new schema has been registered\n @param uid The schema UID.\n @param registerer The address of the account used to register the schema."
             },
             "name": "Registered",
-            "nameLocation": "775:10:3",
+            "nameLocation": "775:10:2",
             "parameters": {
-              "id": 417,
+              "id": 367,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 414,
+                  "id": 364,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "uid",
-                  "nameLocation": "802:3:3",
+                  "nameLocation": "802:3:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 418,
-                  "src": "786:19:3",
+                  "scope": 368,
+                  "src": "786:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -507,10 +507,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 413,
+                    "id": 363,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "786:7:3",
+                    "src": "786:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -520,14 +520,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 416,
+                  "id": 366,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "registerer",
-                  "nameLocation": "815:10:3",
+                  "nameLocation": "815:10:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 418,
-                  "src": "807:18:3",
+                  "scope": 368,
+                  "src": "807:18:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -535,10 +535,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 415,
+                    "id": 365,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "807:7:3",
+                    "src": "807:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -548,18 +548,18 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "785:41:3"
+              "src": "785:41:2"
             }
           },
           {
-            "id": 431,
+            "id": 381,
             "nodeType": "FunctionDefinition",
-            "src": "1122:111:3",
+            "src": "1122:111:2",
             "nodes": [],
             "documentation": {
-              "id": 419,
+              "id": 369,
               "nodeType": "StructuredDocumentation",
-              "src": "833:284:3",
+              "src": "833:284:2",
               "text": " @dev Submits and reserves a new schema\n @param schema The schema data schema.\n @param resolver An optional schema resolver.\n @param revocable Whether the schema allows revocations explicitly.\n @return The UID of the new schema."
             },
             "functionSelector": "60d7a278",
@@ -567,20 +567,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "register",
-            "nameLocation": "1131:8:3",
+            "nameLocation": "1131:8:2",
             "parameters": {
-              "id": 427,
+              "id": 377,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 421,
+                  "id": 371,
                   "mutability": "mutable",
                   "name": "schema",
-                  "nameLocation": "1156:6:3",
+                  "nameLocation": "1156:6:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1140:22:3",
+                  "scope": 381,
+                  "src": "1140:22:2",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -588,10 +588,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 420,
+                    "id": 370,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1140:6:3",
+                    "src": "1140:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -601,33 +601,33 @@
                 },
                 {
                   "constant": false,
-                  "id": 424,
+                  "id": 374,
                   "mutability": "mutable",
                   "name": "resolver",
-                  "nameLocation": "1180:8:3",
+                  "nameLocation": "1180:8:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1164:24:3",
+                  "scope": 381,
+                  "src": "1164:24:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ISchemaResolver_$497",
+                    "typeIdentifier": "t_contract$_ISchemaResolver_$447",
                     "typeString": "contract ISchemaResolver"
                   },
                   "typeName": {
-                    "id": 423,
+                    "id": 373,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 422,
+                      "id": 372,
                       "name": "ISchemaResolver",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 497,
-                      "src": "1164:15:3"
+                      "referencedDeclaration": 447,
+                      "src": "1164:15:2"
                     },
-                    "referencedDeclaration": 497,
-                    "src": "1164:15:3",
+                    "referencedDeclaration": 447,
+                    "src": "1164:15:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISchemaResolver_$497",
+                      "typeIdentifier": "t_contract$_ISchemaResolver_$447",
                       "typeString": "contract ISchemaResolver"
                     }
                   },
@@ -635,13 +635,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 426,
+                  "id": 376,
                   "mutability": "mutable",
                   "name": "revocable",
-                  "nameLocation": "1195:9:3",
+                  "nameLocation": "1195:9:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1190:14:3",
+                  "scope": 381,
+                  "src": "1190:14:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -649,10 +649,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 425,
+                    "id": 375,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1190:4:3",
+                    "src": "1190:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -661,21 +661,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1139:66:3"
+              "src": "1139:66:2"
             },
             "returnParameters": {
-              "id": 430,
+              "id": 380,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 429,
+                  "id": 379,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1224:7:3",
+                  "scope": 381,
+                  "src": "1224:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -683,10 +683,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 428,
+                    "id": 378,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1224:7:3",
+                    "src": "1224:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -695,22 +695,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1223:9:3"
+              "src": "1223:9:2"
             },
-            "scope": 441,
+            "scope": 391,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 440,
+            "id": 390,
             "nodeType": "FunctionDefinition",
-            "src": "1408:76:3",
+            "src": "1408:76:2",
             "nodes": [],
             "documentation": {
-              "id": 432,
+              "id": 382,
               "nodeType": "StructuredDocumentation",
-              "src": "1239:164:3",
+              "src": "1239:164:2",
               "text": " @dev Returns an existing schema by UID\n @param uid The UID of the schema to retrieve.\n @return The schema data members."
             },
             "functionSelector": "a2ea7c6e",
@@ -718,20 +718,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "getSchema",
-            "nameLocation": "1417:9:3",
+            "nameLocation": "1417:9:2",
             "parameters": {
-              "id": 435,
+              "id": 385,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 434,
+                  "id": 384,
                   "mutability": "mutable",
                   "name": "uid",
-                  "nameLocation": "1435:3:3",
+                  "nameLocation": "1435:3:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 440,
-                  "src": "1427:11:3",
+                  "scope": 390,
+                  "src": "1427:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -739,10 +739,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 433,
+                    "id": 383,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1427:7:3",
+                    "src": "1427:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -751,50 +751,50 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1426:13:3"
+              "src": "1426:13:2"
             },
             "returnParameters": {
-              "id": 439,
+              "id": 389,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 438,
+                  "id": 388,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 440,
-                  "src": "1463:19:3",
+                  "scope": 390,
+                  "src": "1463:19:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_SchemaRecord_$410_memory_ptr",
+                    "typeIdentifier": "t_struct$_SchemaRecord_$360_memory_ptr",
                     "typeString": "struct SchemaRecord"
                   },
                   "typeName": {
-                    "id": 437,
+                    "id": 387,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 436,
+                      "id": 386,
                       "name": "SchemaRecord",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 410,
-                      "src": "1463:12:3"
+                      "referencedDeclaration": 360,
+                      "src": "1463:12:2"
                     },
-                    "referencedDeclaration": 410,
-                    "src": "1463:12:3",
+                    "referencedDeclaration": 360,
+                    "src": "1463:12:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_SchemaRecord_$410_storage_ptr",
+                      "typeIdentifier": "t_struct$_SchemaRecord_$360_storage_ptr",
                       "typeString": "struct SchemaRecord"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1462:21:3"
+              "src": "1462:21:2"
             },
-            "scope": 441,
+            "scope": 391,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -805,22 +805,22 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 411,
+          "id": 361,
           "nodeType": "StructuredDocumentation",
-          "src": "485:55:3",
+          "src": "485:55:2",
           "text": " @title The global schema registry interface."
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          441
+          391
         ],
         "name": "ISchemaRegistry",
-        "nameLocation": "551:15:3",
-        "scope": 442,
+        "nameLocation": "551:15:2",
+        "scope": 392,
         "usedErrors": []
       }
     ],
     "license": "MIT"
   },
-  "id": 3
+  "id": 2
 }
