@@ -44,7 +44,6 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@eas/contracts/IEAS.sol";
-// make sbt? 
 
 contract NFTFactory is ERC721Enumerable, Ownable {
     using Strings for uint256;
@@ -110,34 +109,19 @@ contract NFTFactory is ERC721Enumerable, Ownable {
         Address.sendValue(_artist, half);
     }
 
-    function mintTo(uint256 num, address addr) external payable {
-        for (uint256 i; i < num; i++) {
-            _safeMint(addr, i);
-        }
-    }
-
-    function mint(uint256 num, bytes32 attestationUid) internal {
-        require(can_mint, "mint paused");
-
-        uint256 supply = totalSupply();
-
+    function mintTo(address addr, bytes32 attestationUid) external payable {
         // verify attestation
         Attestation memory att = IEAS(attestationContract).getAttestation(attestationUid);
         require(att.revocationTime == 0, "Attestation revoked");
         require(att.expirationTime == 0 || att.expirationTime > block.timestamp, "Attestation expired");
+        _safeMint(addr, totalSupply() + 1);
 
-//         struct Attestation {
-//     bytes32 uid; // A unique identifier of the attestation.
-//     bytes32 schema; // The unique identifier of the schema.
-//     uint64 time; // The time when the attestation was created (Unix timestamp).
-//     uint64 expirationTime; // The time when the attestation expires (Unix timestamp).
-//     uint64 revocationTime; // The time when the attestation was revoked (Unix timestamp).
-//     bytes32 refUID; // The UID of the related attestation.
-//     address recipient; // The recipient of the attestation.
-//     address attester; // The attester/sender of the attestation.
-//     bool revocable; // Whether the attestation is revocable.
-//     bytes data; // Custom attestation data.
-// }
+    }
+
+    function mint(uint256 num) internal {
+        require(can_mint, "mint paused");
+
+        uint256 supply = totalSupply();
 
         require(num <= MAX_PER_MINT, "2 many:call");
         require(balanceOf(msg.sender) + num <= MAX_PER_MINT, "2 many:user"); // max n tokens per user
