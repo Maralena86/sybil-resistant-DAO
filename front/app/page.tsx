@@ -9,6 +9,7 @@ import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { arbitrum, mainnet, polygon, goerli } from "wagmi/chains";
 import { Card, Footer, Header } from "./components";
+import { Modal } from "./components/Modal";
 
 const chains = [arbitrum, mainnet, polygon, goerli];
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!;

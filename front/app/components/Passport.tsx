@@ -1,7 +1,7 @@
 'use client'
 
 import { Dispatch, SetStateAction, useState } from 'react'
-import { useWalletClient, useAccount, useSignMessage } from 'wagmi'
+import { useWalletClient, useAccount } from 'wagmi'
 
 const API_KEY = '6PNyWWCI.JAUjqps5kQIWgNAwd9S7CX1DxU1SPH1O'
 const SCORER_ID = '1692'
@@ -26,7 +26,6 @@ export const Passport = ({ setScore, setNoScoreMessage, setSubmit, isSubmitted }
 }) => {
     const { address } = useAccount()
     const { data: signer } = useWalletClient()
-    const { signMessage } = useSignMessage()
     const [disabled, setDisabled] = useState(false)
 
     async function checkPassport(currentAddress = address) {

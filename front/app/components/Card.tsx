@@ -25,16 +25,16 @@ export const Card = () => {
 				</p>
 				<div className="py-6">
 					<p className="text-4xl">Your score is: {score}</p>
-
-					<Link href="#" className="text-gray-300">
+					{/* <Link href="#" className="text-gray-300">
 						There is a link{" "}
-					</Link>
-
+					</Link> */}
 					<Image src={shieldProof} className="img-shield rotate" alt="logo" />
 				</div>
-				<div className="flex justify-center">
-					{isConnected && <Passport setScore={setScore} setNoScoreMessage={setNoScoreMessage} setSubmit={setSubmit} isSubmitted={isSubmitted} />}
-				</div >
+				{score === '' &&
+					<div className="flex justify-center">
+						{isConnected && <Passport setScore={setScore} setNoScoreMessage={setNoScoreMessage} setSubmit={setSubmit} isSubmitted={isSubmitted} />}
+					</div >
+				}
 				<p>{noScoreMessage}</p>
 			</div >
 		</div >
