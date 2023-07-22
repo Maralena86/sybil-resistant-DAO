@@ -41,24 +41,21 @@ body {
 .img-shield{
   height: 100%;
   width:150px;
-
   margin: 1rem auto;
 }
 .rotate {
-  animation: rotation 3s ;
+  animation: rotation 1s;
 }
 @keyframes rotation {
   from {
     transform: rotateY(0deg);
-    opacity: 0.1;
+    
   }
   to {
-    transform: rotateY(720deg);
+    transform: rotateY(359deg);
   }
 }
-main{
-  height: 100%;
-}
+
 @media screen and (max-width:  900px){
   .img-shield{
     height: 100%;

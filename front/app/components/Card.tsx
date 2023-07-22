@@ -33,9 +33,9 @@ export const Card = () => {
 				</div>
 				<div className="flex justify-center">
 					{!isConnected && (
-						<div className="text-base card-button font-semibold">
-							<button>SUBMIT</button>
-						</div>
+						
+							<button className="text-base card-button font-semibold">SUBMIT</button>
+						
 					)}
 					{isConnected && (
 						<Passport
