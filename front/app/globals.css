@@ -38,6 +38,9 @@ body {
   padding: 0.4rem 4rem; 
   border-radius: 10px;
 }
+.card-button:hover{
+  background: linear-gradient(rgb(69, 123, 139), rgb(30, 103, 127));
+}
 .img-shield{
   height: 100%;
   width:150px;

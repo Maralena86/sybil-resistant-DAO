@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { shieldProof } from "@/public";
+import { shieldProof, shieldEmpty } from "@/public";
 import { Passport } from ".";
 import { useAccount } from "wagmi";
 import { useState } from "react";
@@ -28,14 +28,12 @@ export const Card = () => {
 					<Link href="#" className="text-gray-300">
 						There is a link{" "}
 					</Link>
-
-					<Image src={shieldProof} className="img-shield rotate" alt="logo" />
+					<Image src={shieldEmpty} className="img-shield" alt="logo" />
+					{/* <Image src={shieldProof} className="img-shield rotate" alt="logo" /> */}
 				</div>
 				<div className="flex justify-center">
-					{!isConnected && (
-						
+					{!isConnected && (	
 							<button className="text-base card-button font-semibold">SUBMIT</button>
-						
 					)}
 					{isConnected && (
 						<Passport
