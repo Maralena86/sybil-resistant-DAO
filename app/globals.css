@@ -25,3 +25,18 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.card{
+  background-image: linear-gradient( (rgb(85 172 238) ),rgb(20, 39, 43) );
+}
+.card-icon{
+  background-image: linear-gradient(rgb(124, 110, 128), rgb(20, 80, 123) );
+}
+.card-button{
+  background-image: linear-gradient((rgb(85 172 238) ), rgb(7, 28, 54) );
+  margin: 0 auto;
+  padding: 0.4rem 4rem; 
+  border-radius: 10px;
+}
+button{
+  
+}
