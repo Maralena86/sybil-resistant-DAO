@@ -13,7 +13,7 @@
 | Polygon zkEVM         | 0xA393088d6172845e4F4003E3FD958a9F174420B0     |
 | Polygon zkEVM (Testnet)| 0xB02d792E290DEc52255d01b221686b4A11254268     |
 | Neon EVM (Devnet)     | [0x4E7b62Af7741E8189eAd3f754f4A853ae453Eed7](https://devnet.neonscan.org/address/0x4E7b62Af7741E8189eAd3f754f4A853ae453Eed7#contract)  |
-| Sepolia (Testnet)     | [0xA393088d6172845e4F4003E3FD958a9F174420B0](https://sepolia.etherscan.io/address/0xA393088d6172845e4F4003E3FD958a9F174420B0)
+| Sepolia (Testnet)     | [0xb1a14ef340c380b99dD6e3899676Df18e16d61F6](https://sepolia.etherscan.io/address/0xb1a14ef340c380b99dD6e3899676Df18e16d61F6)
 
 
 # Contract verification 
