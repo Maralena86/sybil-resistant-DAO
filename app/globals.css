@@ -26,7 +26,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 .card{
-  background-image: linear-gradient( (rgb(85 172 238) ),rgb(20, 39, 43) );
+  background-image: linear-gradient(rgb(35, 43, 111), white);
 }
 .card-icon{
   background-image: linear-gradient(rgb(124, 110, 128), rgb(20, 80, 123) );
@@ -37,6 +37,4 @@ body {
   padding: 0.4rem 4rem; 
   border-radius: 10px;
 }
-button{
-  
-}
+

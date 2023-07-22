@@ -21,7 +21,7 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains)
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between p-6">
+    <main className="flex min-h-screen flex-col  p-6">
       <WagmiConfig config={wagmiConfig} >
         <Web3Button />
       </WagmiConfig>

@@ -24,7 +24,7 @@ export function Card() {
                   </div>
                   <div className="flex text-gray-400">
                       
-                      <Link href="#">There's a link </Link>
+                      <Link href="#">There is a link </Link>
                         
                   </div>
                 </div>
