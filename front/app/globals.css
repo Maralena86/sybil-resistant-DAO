@@ -18,24 +18,34 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #BBD2C5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #292E49, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  min-height:100vh;
+  background: #bbd2c5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #292e49,
+    #536976,
+    #bbd2c5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #292e49,
+    #536976,
+    #bbd2c5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.card{
-  background-image: linear-gradient( rgb(32 36 37), rgb(31 44 44));
+.card {
+  background-image: linear-gradient(rgb(32 36 37), rgb(31 44 44));
 }
-.card-icon{
-  background-image: linear-gradient(black, rgb(41, 44, 46) );
+.card-icon {
+  background-image: linear-gradient(black, rgb(41, 44, 46));
 }
-.card-button{
+.card-button {
   background-image: linear-gradient(rgb(34 103 153), rgb(42 70 91));
   margin: 0 auto;
-  padding: 0.4rem 4rem; 
+  padding: 0.4rem 4rem;
   border-radius: 10px;
 }
 .card-button:hover{
@@ -51,22 +61,20 @@ body {
 }
 @keyframes rotation {
   from {
-    transform: rotateY(0deg);
-    
+    transform: rotateY(0deg);    
   }
   to {
     transform: rotateY(359deg);
   }
 }
-
-@media screen and (max-width:  900px){
-  .img-shield{
+@media screen and (max-width: 900px) {
+  .img-shield {
     height: 100%;
+    width: 23%;
   }
-  .img-shield-container{
+  .img-shield-container {
     height: 10%;
     justify-content: space-around;
     width: 90%;
   }
 }
-

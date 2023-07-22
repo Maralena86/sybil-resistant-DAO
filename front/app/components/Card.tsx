@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export const Card = () => {
 	const { isConnected } = useAccount();
+	const [isSubmitted, setSubmit] = useState(false);
 	const [score, setScore] = useState<string>("");
 	const [noScoreMessage, setNoScoreMessage] = useState<string>("");
 
@@ -20,10 +21,10 @@ export const Card = () => {
 			</div>
 			<div className="mt-4 text-center">
 				<p className="sm:text-2xl font-semibold my-2 text-sky-200">
-					Join the Sybil Resitant DAO
+					Join the Sybil Resistant DAO
 				</p>
 				<div className="py-6">
-					<p className="text-4xl">0.0</p>
+					<p className="text-4xl">Your score is: {score}</p>
 
 					<Link href="#" className="text-gray-300">
 						There is a link{" "}
@@ -32,17 +33,15 @@ export const Card = () => {
 					{/* <Image src={shieldProof} className="img-shield rotate" alt="logo" /> */}
 				</div>
 				<div className="flex justify-center">
-					{!isConnected && (	
-							<button className="text-base card-button font-semibold">SUBMIT</button>
-					)}
 					{isConnected && (
 						<Passport
 							setScore={setScore}
 							setNoScoreMessage={setNoScoreMessage}
+							setSubmit={setSubmit}
+							isSubmitted={isSubmitted}
 						/>
 					)}
 				</div>
-				<p>{score}</p>
 				<p>{noScoreMessage}</p>
 			</div>
 		</div>
