@@ -25,10 +25,9 @@ export const Card = () => {
 				</p>
 				<div className="py-6">
 					<p className="text-4xl">Your score is: {score}</p>
-
-					<Link href="#" className="text-gray-300">
+					{/* <Link href="#" className="text-gray-300">
 						There is a link{" "}
-					</Link>
+					</Link> */}
 					<Image src={shieldEmpty} className="img-shield" alt="logo" />
 					{/* <Image src={shieldProof} className="img-shield rotate" alt="logo" /> */}
 				</div>
