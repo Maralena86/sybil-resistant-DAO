@@ -1,10 +1,10 @@
 'use client'
 
-import { Dispatch, SetStateAction } from 'react'
-import { useWalletClient, useAccount } from 'wagmi'
+import { Dispatch, SetStateAction, useState } from 'react'
+import { useWalletClient, useAccount, useSignMessage } from 'wagmi'
 
 const API_KEY = '6PNyWWCI.JAUjqps5kQIWgNAwd9S7CX1DxU1SPH1O'
-const SCORER_ID = '892'
+const SCORER_ID = '1692'
 
 const headers = API_KEY ? ({
     'Content-Type': 'application/json',
@@ -18,12 +18,16 @@ const SIGNING_MESSAGE_URI = 'https://api.scorer.gitcoin.co/registry/signing-mess
 // score needed to see hidden message
 const thresholdNumber = 20
 
-export const Passport = ({ setScore, setNoScoreMessage }: {
+export const Passport = ({ setScore, setNoScoreMessage, setSubmit, isSubmitted }: {
     setScore: Dispatch<SetStateAction<string>>
     setNoScoreMessage: Dispatch<SetStateAction<string>>
+    setSubmit: Dispatch<SetStateAction<boolean>>
+    isSubmitted: boolean
 }) => {
     const { address } = useAccount()
     const { data: signer } = useWalletClient()
+    const { signMessage } = useSignMessage()
+    const [disabled, setDisabled] = useState(false)
 
     async function checkPassport(currentAddress = address) {
         setScore('')
@@ -64,14 +68,19 @@ export const Passport = ({ setScore, setNoScoreMessage }: {
         if (!signer) return
         try {
             const { message, nonce } = await getSigningMessage()
-            const signature = await signer.signMessage(message)
+            console.log(message)
+            console.log(signer)
+            const signature = await signer.signMessage({
+                account: signer.account,
+                message: message,
+            })
 
             const response = await fetch(SUBMIT_PASSPORT_URI, {
                 method: 'POST',
                 headers,
                 body: JSON.stringify({
                     address,
-                    scorer: SCORER_ID,
+                    community: SCORER_ID,
                     signature,
                     nonce
                 })
@@ -79,6 +88,7 @@ export const Passport = ({ setScore, setNoScoreMessage }: {
 
             const data = await response.json()
             console.log('data:', data)
+            setSubmit(true)
         } catch (err) {
             console.log('error: ', err)
         }
@@ -86,11 +96,17 @@ export const Passport = ({ setScore, setNoScoreMessage }: {
 
     return (
         <button
-            className="text-base card-button font-semibold"
-            onClick={() => checkPassport()}
-        >
-            Check passport score
+            disabled={disabled}
+            className={`text-base card-button font-semibold ${disabled ? "bg-grey-500" : ""}`}
+            onClick={() => {
+                setDisabled(true)
+                if (isSubmitted)
+                    checkPassport()
+                else {
+                    submitPassport()
+                }
+            }}>
+            {isSubmitted ? "Check Passport" : "Submit Passport"}
         </button >
-
     )
 }

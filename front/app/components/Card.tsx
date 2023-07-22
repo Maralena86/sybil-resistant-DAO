@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 export const Card = () => {
 	const { isConnected } = useAccount()
+	const [isSubmitted, setSubmit] = useState(false)
 	const [score, setScore] = useState<string>('')
 	const [noScoreMessage, setNoScoreMessage] = useState<string>('')
 
@@ -30,12 +31,7 @@ export const Card = () => {
 					</div> */}
 				</div>
 				<div className="flex justify-center">
-					{!isConnected &&
-						<div className="text-base card-button font-semibold">
-							<button>SUBMIT</button>
-						</div>
-					}
-					{isConnected && <Passport setScore={setScore} setNoScoreMessage={setNoScoreMessage} />}
+					{isConnected && <Passport setScore={setScore} setNoScoreMessage={setNoScoreMessage} setSubmit={setSubmit} isSubmitted={isSubmitted} />}
 				</div>
 				<p>{score}</p>
 				<p>{noScoreMessage}</p>

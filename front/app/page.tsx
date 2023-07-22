@@ -12,7 +12,7 @@ const chains = [arbitrum, mainnet, polygon, goerli];
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!;
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({
-	autoConnect: true,
+	autoConnect: false,
 	connectors: w3mConnectors({ projectId, chains }),
 	publicClient,
 });
