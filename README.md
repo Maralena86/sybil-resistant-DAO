@@ -13,4 +13,12 @@
 | Polygon zkEVM         | 0xA393088d6172845e4F4003E3FD958a9F174420B0     |
 | Polygon zkEVM (Testnet)| 0xB02d792E290DEc52255d01b221686b4A11254268     |
 | Neon EVM (Devnet)     | [0x4E7b62Af7741E8189eAd3f754f4A853ae453Eed7](https://devnet.neonscan.org/address/0x4E7b62Af7741E8189eAd3f754f4A853ae453Eed7#contract)  |
-| Sepolia (Testnet)     | [0x5a4728f0674f038b7ab189db74e9d197a87ad08d](https://sepolia.etherscan.io/address/0x5a4728f0674f038b7ab189db74e9d197a87ad08d)
+| Sepolia (Testnet)     | [0xA393088d6172845e4F4003E3FD958a9F174420B0](https://sepolia.etherscan.io/address/0xA393088d6172845e4F4003E3FD958a9F174420B0)
+
+
+# Contract verification 
+```
+
+  forge verify-contract --constructor-args $(cast abi-encode "constructor(string,string,uint256,uint256, uint256, address, address)" "KYCNFTFactory" "knf" 0 10000 10000 0x78f83b36468bFf785046974e21A1449b47FD7e74 0xC2679fBD37d54388Ce493F1DB75320D236e1815e) \
+  0xA393088d6172845e4F4003E3FD958a9F174420B0 NFTFactory --chain=sepolia --watch
+```
