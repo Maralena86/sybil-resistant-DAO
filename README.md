@@ -10,10 +10,9 @@
 | Network               | Address                                          |
 |-----------------------|--------------------------------------------------|
 | Linea                 | 0xc70a7Cff617E1F2EEdE7D2D18A6a4888DdF77219     |
-| Polygon zkEVM         | 0xA393088d6172845e4F4003E3FD958a9F174420B0     |
-| Polygon zkEVM (Testnet)| 0xB02d792E290DEc52255d01b221686b4A11254268     |
-| Neon EVM (Devnet)     | [0x4E7b62Af7741E8189eAd3f754f4A853ae453Eed7](https://devnet.neonscan.org/address/0x4E7b62Af7741E8189eAd3f754f4A853ae453Eed7#contract)  |
-| Sepolia (Testnet)     | [0xb1a14ef340c380b99dD6e3899676Df18e16d61F6](https://sepolia.etherscan.io/address/0xb1a14ef340c380b99dD6e3899676Df18e16d61F6)
+| Polygon zkEVM (Testnet)| [0xB02d792E290DEc52255d01b221686b4A11254268](https://testnet-zkevm.polygonscan.com/address/0xb02d792e290dec52255d01b221686b4a11254268)     |
+| Neon EVM (Devnet)     | [0x980fe87188338c69C210335763b2669ec8F256e0](https://devnet.neonscan.org/address/0x980fe87188338c69C210335763b2669ec8F256e0#contract)  |
+| Sepolia (Testnet)     | [0x2B6F60bec5a6Ee94935A76C5647D2E1C44A41F30](https://sepolia.etherscan.io/address/0x2B6F60bec5a6Ee94935A76C5647D2E1C44A41F30)
 
 
 # Contract verification 
