@@ -1,2 +1,3 @@
 export const EASContractAddress = "0xC2679fBD37d54388Ce493F1DB75320D236e1815e"
-export const NFTContractAddress= "0x5a4728f0674f038b7ab189db74e9d197a87ad08d"
+export const NFTContractAddress = "0xA393088d6172845e4F4003E3FD958a9F174420B0"
+export const schemaUID = "0xfb08fb45bac0ed4b95d23fd173d202453d0b1c3f6bd96e7bca1b2f616492df98"

@@ -3,8 +3,11 @@ import { useState } from 'react'
 import { EAS, Offchain, SchemaEncoder, SchemaRegistry } from "@ethereum-attestation-service/eas-sdk";
 import { ethers } from "ethers";
 import { useEthersSigner } from '../../ethersConvert'
+import { EASContractAddress, NFTContractAddress, schemaUID } from '../utils/contractAddress';
 
-export const EASComponent = () => {
+export const EASComponent = ({ account }: {
+    account: `0x${string}` | undefined
+}) => {
     const getAttestation = async (eas: EAS, uid: string) => {
         const attestation = await eas.getAttestation(uid);
         console.log(attestation);
@@ -16,17 +19,14 @@ export const EASComponent = () => {
         // Initialize SchemaEncoder with the schema string
         const schemaEncoder = new SchemaEncoder("address user, string tier");
         const encodedData = schemaEncoder.encodeData([
-            { name: "user", value: "0x78f83b36468bFf785046974e21A1449b47FD7e74", type: "address" },
+            { name: "user", value: account!, type: "address" },
             { name: "tier", value: "gold", type: "string" },
         ]);
-
-
-        const schemaUID = "0xfb08fb45bac0ed4b95d23fd173d202453d0b1c3f6bd96e7bca1b2f616492df98";
 
         const tx = await eas.attest({
             schema: schemaUID,
             data: {
-                recipient: "0x78f83b36468bFf785046974e21A1449b47FD7e74",
+                recipient: account!,
                 expirationTime: 0,
                 revocable: true,
                 data: encodedData,
@@ -35,21 +35,14 @@ export const EASComponent = () => {
 
         const newAttestationUID = await tx.wait();
         setUid(newAttestationUID)
-
         console.log("New attestation UID:", newAttestationUID);
     }
-
-
-
-
 
     // 	const { isConnected } = useAccount()
     //     const { data: walletClient } = useWalletClient()
     const signer = useEthersSigner()
     const [disabled, setDisabled] = useState(false)
     const [uid, setUid] = useState('')
-
-    const EASContractAddress = "0xC2679fBD37d54388Ce493F1DB75320D236e1815e"; // Sepolia v0.26
 
     // Initialize the sdk with the address of the EAS Schema contract address
     // const eas = new EAS(EASContractAddress);
@@ -77,6 +70,7 @@ export const EASComponent = () => {
             onClick={() => {
                 setDisabled(true)
                 attest(eas, signer)
+                setDisabled(false)
 
 
             }}>

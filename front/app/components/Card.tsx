@@ -11,6 +11,7 @@ export const Card = () => {
 	const [isSubmitted, setSubmit] = useState(false);
 	const [score, setScore] = useState<string>("");
 	const [noScoreMessage, setNoScoreMessage] = useState<string>("");
+	const [account, setAccount] = useState<`0x${string}` | undefined>(undefined);
 
 	// const scoreColor = () => {
 
@@ -40,6 +41,7 @@ export const Card = () => {
 					<div className="flex justify-center">
 						{isConnected && (
 							<Passport
+								setAccount={setAccount}
 								setScore={setScore}
 								setNoScoreMessage={setNoScoreMessage}
 								setSubmit={setSubmit}
@@ -53,7 +55,7 @@ export const Card = () => {
 				{score !== "" && parseInt(score) === 0 &&
 					<div className="flex justify-center">
 						{isConnected && (
-							<EASComponent />
+							<EASComponent account={account} />
 						)}
 					</div>
 				}

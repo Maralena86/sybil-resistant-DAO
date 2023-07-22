@@ -18,7 +18,8 @@ const SIGNING_MESSAGE_URI = 'https://api.scorer.gitcoin.co/registry/signing-mess
 // score needed to see hidden message
 const thresholdNumber = 20
 
-export const Passport = ({ setScore, setNoScoreMessage, setSubmit, isSubmitted }: {
+export const Passport = ({ setAccount, setScore, setNoScoreMessage, setSubmit, isSubmitted }: {
+    setAccount: Dispatch<SetStateAction<`0x${string}` | undefined>>
     setScore: Dispatch<SetStateAction<string>>
     setNoScoreMessage: Dispatch<SetStateAction<string>>
     setSubmit: Dispatch<SetStateAction<boolean>>
@@ -69,8 +70,7 @@ export const Passport = ({ setScore, setNoScoreMessage, setSubmit, isSubmitted }
         if (!signer) return
         try {
             const { message, nonce } = await getSigningMessage()
-            console.log(message)
-            console.log(signer)
+            setAccount(address)
             const signature = await signer.signMessage({
                 account: signer.account,
                 message: message,
