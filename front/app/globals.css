@@ -57,11 +57,11 @@ body {
   margin: 1rem auto;
 }
 .rotate {
-  animation: rotation 1s;
+  animation: rotation 2s;
 }
 @keyframes rotation {
   from {
-    transform: rotateY(0deg);    
+    transform: rotateY(10deg);    
   }
   to {
     transform: rotateY(359deg);

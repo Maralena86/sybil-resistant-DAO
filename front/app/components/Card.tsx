@@ -17,7 +17,7 @@ export const Card = () => {
 				<Image src="/gitcoinco.png" width={30} height={30} alt="Gitcoin" />
 			</div>
 			<div className="  card-icon flex items-center absolute rounded-full py-4 px-4 shadow-xl right-4 -top-6">
-				<Image src="/sismo.png" width={30} height={30} alt="Gitcoin" />
+				<Image src="/eas.png" width={30} height={30} alt="Gitcoin" />
 			</div>
 			<div className="mt-4 text-center">
 				<p className="sm:text-2xl font-semibold my-2 text-sky-200">
