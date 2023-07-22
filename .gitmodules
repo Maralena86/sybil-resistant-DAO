@@ -1,0 +1,6 @@
+[submodule "lib/eas-contracts"]
+	path = lib/eas-contracts
+	url = https://github.com/ethereum-attestation-service/eas-contracts
+[submodule "forge/lib/eas-contracts"]
+	path = forge/lib/eas-contracts
+	url = https://github.com/ethereum-attestation-service/eas-contracts

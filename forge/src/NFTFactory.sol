@@ -43,6 +43,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@eas/contracts/IEAS.sol";
 // make sbt? 
 
 contract NFTFactory is ERC721Enumerable, Ownable {
@@ -57,6 +58,7 @@ contract NFTFactory is ERC721Enumerable, Ownable {
 
     address payable private _artist;
     address payable private _benefactor;
+    address public attestationContract;
 
     constructor(
         string memory _name,
@@ -64,13 +66,15 @@ contract NFTFactory is ERC721Enumerable, Ownable {
         uint256 _price, // Price of each NFT in ETH, 1 ETH = 1e18 or 1 followed by 18 0s
         uint256 _maxSupply, // max supply of the nfts
         uint256 _maxPerMint, // max no. of nfts a user can mint in a single tx. also max they can mint into 1 wallet
-        address artist // artist address
+        address artist, // artist address,
+        address _attestationContract
     ) ERC721(_name, _symbol) {
         PRICE = _price;
         MAX_SUPPLY = _maxSupply;
         MAX_PER_MINT = _maxPerMint;
         _artist = payable(artist);
         _benefactor = payable(owner());
+        attestationContract = _attestationContract;
 
         // Mint 5 to artist, 5 to owner, + 5 to owner for raffle
         for (uint256 i; i < 5; i++) {
@@ -112,10 +116,28 @@ contract NFTFactory is ERC721Enumerable, Ownable {
         }
     }
 
-    function mint(uint256 num) internal {
+    function mint(uint256 num, bytes32 attestationUid) internal {
         require(can_mint, "mint paused");
 
         uint256 supply = totalSupply();
+
+        // verify attestation
+        Attestation memory att = IEAS(attestationContract).getAttestation(attestationUid);
+        require(att.revocationTime == 0, "Attestation revoked");
+        require(att.expirationTime == 0 || att.expirationTime > block.timestamp, "Attestation expired");
+
+//         struct Attestation {
+//     bytes32 uid; // A unique identifier of the attestation.
+//     bytes32 schema; // The unique identifier of the schema.
+//     uint64 time; // The time when the attestation was created (Unix timestamp).
+//     uint64 expirationTime; // The time when the attestation expires (Unix timestamp).
+//     uint64 revocationTime; // The time when the attestation was revoked (Unix timestamp).
+//     bytes32 refUID; // The UID of the related attestation.
+//     address recipient; // The recipient of the attestation.
+//     address attester; // The attester/sender of the attestation.
+//     bool revocable; // Whether the attestation is revocable.
+//     bytes data; // Custom attestation data.
+// }
 
         require(num <= MAX_PER_MINT, "2 many:call");
         require(balanceOf(msg.sender) + num <= MAX_PER_MINT, "2 many:user"); // max n tokens per user

@@ -1,9 +1,6 @@
 "use client";
-import {
-	EthereumClient,
-	w3mConnectors,
-	w3mProvider,
-} from "@web3modal/ethereum";
+
+import { EthereumClient, w3mConnectors, w3mProvider } from "@web3modal/ethereum";
 import { Web3Modal, Web3Button } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { arbitrum, mainnet, polygon, goerli } from "wagmi/chains";
@@ -13,12 +10,11 @@ import { shieldGold, shieldSilver, shieldBronze } from "@/public";
 
 const chains = [arbitrum, mainnet, polygon, goerli];
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!;
-
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({
-	autoConnect: true,
-	connectors: w3mConnectors({ projectId, chains }),
-	publicClient,
+  autoConnect: true,
+  connectors: w3mConnectors({ projectId, chains }),
+  publicClient,
 });
 const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
