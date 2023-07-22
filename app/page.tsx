@@ -7,9 +7,9 @@ import {
 import { Web3Modal, Web3Button } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { arbitrum, mainnet, polygon, goerli } from "wagmi/chains";
-import { Card } from "./components/Card";
+import { Card, Footer, Header } from "./components";
 import Image from "next/image";
-import { Footer } from "./Footer";
+import { shieldGold, shieldSilver, shieldBronze } from "@/public";
 
 const chains = [arbitrum, mainnet, polygon, goerli];
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!;
@@ -24,45 +24,26 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
 export default function Home() {
 	return (
-		<main>
+		<>
 			<WagmiConfig config={wagmiConfig}>
-				<section className="flex flex-col  p-6">
-					<div className="flex justify-between">
-						<Image src="/favicon.ico" width={40} height={40} alt="logo" />
-						<div className="">
-							<Web3Button />
-            </div>
-          </div>
-							<div className="flex items-center flex-col p-20">
-								<div className="">
-									<Card />
-								</div>
-								<div className="pt-24 flex gap-12">
-									<Image
-										src="/shield-gold.png"
-										width={200}
-										height={200}
-										alt="logo"
-									/>
-									<Image
-										src="/shield-argent.png"
-										width={200}
-										height={200}
-										alt="logo"
-									/>
-
-									<Image
-										src="/shield-bronze.png"
-										width={200}
-										height={200}
-										alt="logo"
-									/>
-								</div>
+				<Header />
+				<main>
+					<section className="flex flex-col p-6">
+						<div className="flex items-center flex-col gap-12 ">
+							<Card />
+							<div className="flex img-shield-container">
+								<Image src={shieldGold} className="img-shield" alt="logo" />
+								<Image src={shieldSilver} className="img-shield" alt="logo" />
+								<Image src={shieldBronze} className="img-shield" alt="logo" />
 							</div>
-						
-				</section>
+						</div>
+					</section>
+				</main>
+				<Footer />
 			</WagmiConfig>
-			<Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
-		</main>
+			<div className="absolute">
+				<Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+			</div>
+		</>
 	);
 }
