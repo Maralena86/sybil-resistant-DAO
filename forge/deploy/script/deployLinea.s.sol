@@ -22,13 +22,13 @@ contract Deploy is Script {
         // uint256 _maxSupply, // max supply of the nfts
         // uint256 _maxPerMint, // max no. of nfts a user can mint in a single tx. also max they can mint into 1 wallet
         // address artist // artist address
-        NFTFactory factory = NFTFactory(
+        NFTFactory factory = new NFTFactory(
           'KYCNFTFactory',
           'knf',
           0,
           10000,
           10000,
-          0x610c92c70eb55dfeafe8970513d13771da79f2e0
+          0x610c92c70Eb55dFeAFe8970513D13771Da79f2e0
         );
         
         console.log("NFT Factory deployed: ", address(factory));

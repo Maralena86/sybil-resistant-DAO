@@ -43,6 +43,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+// make sbt? 
 
 contract NFTFactory is ERC721Enumerable, Ownable {
     using Strings for uint256;
@@ -107,11 +108,11 @@ contract NFTFactory is ERC721Enumerable, Ownable {
 
     function mintTo(uint256 num, address addr) external payable onlyOwner {
         for (uint256 i; i < num; i++) {
-            _safeMint(addr, supply + i);
+            _safeMint(addr, i);
         }
     }
 
-    function mint(uint256 num) internal payable {
+    function mint(uint256 num) internal {
         require(can_mint, "mint paused");
 
         uint256 supply = totalSupply();
