@@ -22,12 +22,22 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains)
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col  p-6">
-      <WagmiConfig config={wagmiConfig} >
-        <Web3Button />
-      </WagmiConfig>
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+      <div className='flex justify-between'>
+        <Image
+        src="/favicon.ico"
+        width={40}
+        height={40}
+        alt="logo"
+        />
+        <div className=''>
+          <WagmiConfig config={wagmiConfig} >
+            <Web3Button />
+          </WagmiConfig>
+          <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+        </div>
+      </div>
       <div className="flex items-center justify-center p-24">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+        <div className="">
           <Card/>
         </div>
       </div>

@@ -4,8 +4,8 @@ import Link from 'next/link'
 export function Card() {
   return (
 
-        <div className="relative card py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
-            <div className=" text-white  card-icon flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
+        <div className="relative card py-12 px-12 rounded-3xl w-82 my-4 shadow-xl">
+            <div className="  card-icon flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
                
             <Image
               src="/gitcoinco.png"
@@ -13,9 +13,18 @@ export function Card() {
               height={30}
               alt="Gitcoin"
             />
+           
             </div>
-            <div className="mt-8">
-                <p className="text-xl font-semibold my-2">Gitcoin</p>
+            <div className="  card-icon flex items-center absolute rounded-full py-4 px-4 shadow-xl right-4 -top-6">
+            <Image
+              src="/sismo.png"
+              width={30}
+              height={30}
+              alt="Gitcoin"
+            />
+            </div>
+            <div className="mt-8 text-center">
+                <p className="text-xl font-semibold my-2">Join the  Sybil Resitant DAO</p>
                 <div className='py-6'>
                   <div className="flex space-x-2   ">
                     
@@ -34,7 +43,7 @@ export function Card() {
                     
                     
                   <div className="text-base card-button font-semibold">
-                        <button>Verify </button>
+                        <button>Mint </button>
                         
                     </div>
                 </div>
