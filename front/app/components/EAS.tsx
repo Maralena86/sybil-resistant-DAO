@@ -71,8 +71,6 @@ export const EASComponent = ({ account }: {
                 setDisabled(true)
                 attest(eas, signer)
                 setDisabled(false)
-
-
             }}>
             {disabled &&
                 <svg
