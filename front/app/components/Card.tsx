@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { shieldProof } from "@/public";
+import { shieldProof, shieldEmpty } from "@/public";
 import { Passport } from ".";
 import { useAccount } from "wagmi";
 import { useState } from "react";
 
 export const Card = () => {
-	const { isConnected } = useAccount()
-	const [isSubmitted, setSubmit] = useState(false)
-	const [score, setScore] = useState<string>('')
-	const [noScoreMessage, setNoScoreMessage] = useState<string>('')
+	const { isConnected } = useAccount();
+	const [isSubmitted, setSubmit] = useState(false);
+	const [score, setScore] = useState<string>("");
+	const [noScoreMessage, setNoScoreMessage] = useState<string>("");
 
 	return (
 		<div className="relative card py-8 px-16 rounded-3xl my-4 shadow-xl">
@@ -28,15 +28,21 @@ export const Card = () => {
 					{/* <Link href="#" className="text-gray-300">
 						There is a link{" "}
 					</Link> */}
-					<Image src={shieldProof} className="img-shield rotate" alt="logo" />
+					<Image src={shieldEmpty} className="img-shield" alt="logo" />
+					{/* <Image src={shieldProof} className="img-shield rotate" alt="logo" /> */}
 				</div>
-				{score === '' &&
-					<div className="flex justify-center">
-						{isConnected && <Passport setScore={setScore} setNoScoreMessage={setNoScoreMessage} setSubmit={setSubmit} isSubmitted={isSubmitted} />}
-					</div >
-				}
+				<div className="flex justify-center">
+					{isConnected && (
+						<Passport
+							setScore={setScore}
+							setNoScoreMessage={setNoScoreMessage}
+							setSubmit={setSubmit}
+							isSubmitted={isSubmitted}
+						/>
+					)}
+				</div>
 				<p>{noScoreMessage}</p>
-			</div >
-		</div >
+			</div>
+		</div>
 	);
 };
