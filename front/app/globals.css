@@ -36,7 +36,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.card {
+.card, .modal-container {
   background-image: linear-gradient(rgb(32 36 37), rgb(31 44 44));
 }
 .card-icon {
