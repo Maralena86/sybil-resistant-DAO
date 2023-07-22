@@ -4,12 +4,17 @@ import { shieldProof, shieldEmpty } from "@/public";
 import { Passport } from ".";
 import { useAccount } from "wagmi";
 import { useState } from "react";
+import { EASComponent } from ".";
 
 export const Card = () => {
 	const { isConnected } = useAccount();
 	const [isSubmitted, setSubmit] = useState(false);
 	const [score, setScore] = useState<string>("");
 	const [noScoreMessage, setNoScoreMessage] = useState<string>("");
+
+	// const scoreColor = () => {
+
+	// }
 
 	return (
 		<div className="relative card py-8 px-16 rounded-3xl my-4 shadow-xl">
@@ -24,23 +29,36 @@ export const Card = () => {
 					Join the Sybil Resistant DAO
 				</p>
 				<div className="py-6">
-					<p className="text-4xl">Your score is: {score}</p>
+					<p className="text-4xl">Your score is: <span className="text-green-500">{score}</span></p>
 					{/* <Link href="#" className="text-gray-300">
 						There is a link{" "}
 					</Link> */}
 					<Image src={shieldEmpty} className="img-shield" alt="logo" />
 					{/* <Image src={shieldProof} className="img-shield rotate" alt="logo" /> */}
 				</div>
-				<div className="flex justify-center">
-					{isConnected && (
-						<Passport
-							setScore={setScore}
-							setNoScoreMessage={setNoScoreMessage}
-							setSubmit={setSubmit}
-							isSubmitted={isSubmitted}
-						/>
-					)}
-				</div>
+				{score === "" &&
+					<div className="flex justify-center">
+						{isConnected && (
+							<Passport
+								setScore={setScore}
+								setNoScoreMessage={setNoScoreMessage}
+								setSubmit={setSubmit}
+								isSubmitted={isSubmitted}
+							/>
+						)}
+					</div>}
+				{score !== "" && parseInt(score) > 30 &&
+					<p>You need to go to Gitcoin Passport to improve your score to minimum 40</p>
+				}
+				{score !== "" && parseInt(score) === 0 &&
+					<div className="flex justify-center">
+						{isConnected && (
+							<EASComponent />
+						)}
+					</div>
+				}
+
+
 				<p>{noScoreMessage}</p>
 			</div>
 		</div>

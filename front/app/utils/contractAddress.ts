@@ -1,0 +1,2 @@
+export const EASContractAddress = "0xC2679fBD37d54388Ce493F1DB75320D236e1815e"
+export const NFTContractAddress= "0x5a4728f0674f038b7ab189db74e9d197a87ad08d"

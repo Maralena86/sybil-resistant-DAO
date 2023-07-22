@@ -7,12 +7,12 @@ import {
 } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { arbitrum, mainnet, polygon, goerli } from "wagmi/chains";
+import { arbitrum, mainnet, polygon, goerli, sepolia } from "wagmi/chains";
 import { Card, Footer, Header } from "./components";
 import { Modal } from "./components/Modal";
 import { useState } from "react";
 
-const chains = [arbitrum, mainnet, polygon, goerli];
+const chains = [sepolia, arbitrum, mainnet, polygon, goerli];
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!;
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({
@@ -23,7 +23,7 @@ const wagmiConfig = createConfig({
 const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
 export default function Home() {
-	const [modal, setModal] = useState(true);
+	const [modal, setModal] = useState(false);
 	return (
 		<>
 			<WagmiConfig config={wagmiConfig}>
