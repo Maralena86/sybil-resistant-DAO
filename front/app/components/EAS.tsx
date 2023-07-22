@@ -8,6 +8,10 @@ import { EASContractAddress, NFTContractAddress, schemaUID } from '../utils/cont
 export const EASComponent = ({ account }: {
     account: `0x${string}` | undefined
 }) => {
+    const signer = useEthersSigner()
+    const [disabled, setDisabled] = useState(false)
+    const [uid, setUid] = useState('')
+
     const getAttestation = async (eas: EAS, uid: string) => {
         const attestation = await eas.getAttestation(uid);
         console.log(attestation);
@@ -40,9 +44,6 @@ export const EASComponent = ({ account }: {
 
     // 	const { isConnected } = useAccount()
     //     const { data: walletClient } = useWalletClient()
-    const signer = useEthersSigner()
-    const [disabled, setDisabled] = useState(false)
-    const [uid, setUid] = useState('')
 
     // Initialize the sdk with the address of the EAS Schema contract address
     // const eas = new EAS(EASContractAddress);
@@ -62,6 +63,10 @@ export const EASComponent = ({ account }: {
     // const uid = "0x5134f511e0533f997e569dac711952dde21daf14b316f3cce23835defc82c065";
 
     // getAttestation(eas, uid)
+
+    const mint = () => {
+
+    }
 
     return (
         <button

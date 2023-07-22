@@ -7,15 +7,23 @@ import { useState } from "react";
 import { EASComponent } from ".";
 
 export const Card = () => {
-	const { isConnected } = useAccount();
+	const { isConnected, isDisconnected } = useAccount();
 	const [isSubmitted, setSubmit] = useState(false);
 	const [score, setScore] = useState<string>("");
 	const [noScoreMessage, setNoScoreMessage] = useState<string>("");
 	const [account, setAccount] = useState<`0x${string}` | undefined>(undefined);
 
-	// const scoreColor = () => {
-
-	// }
+	const scoreColor = () => {
+		if (score === '')
+			return ""
+		else {
+			const scoreValue = parseFloat(score)
+			if (scoreValue <= 30)
+				return "text-red-700"
+			else
+				return "text-green-700"
+		}
+	}
 
 	return (
 		<div className="relative card py-8 px-16 rounded-3xl my-4 shadow-xl">
@@ -30,7 +38,7 @@ export const Card = () => {
 					Join the Sybil Resistant DAO
 				</p>
 				<div className="py-6">
-					<p className="text-4xl">Your score is: <span className="text-green-500">{score}</span></p>
+					<p className="text-4xl">Your score is: <span className={`${scoreColor()}`}>{score}</span></p>
 					{/* <Link href="#" className="text-gray-300">
 						There is a link{" "}
 					</Link> */}
@@ -49,19 +57,24 @@ export const Card = () => {
 							/>
 						)}
 					</div>}
-				{score !== "" && parseInt(score) > 30 &&
-					<p>You need to go to Gitcoin Passport to improve your score to minimum 40</p>
+				{score !== "" && parseFloat(score) < 30 &&
+					<p>You need to go to {' '}
+						<a target="_blank" href="https://passport.gitcoin.co" className="underline">
+							Gitcoin Passport
+						</a>
+						{' '} to improve your score to minimum 30</p>
 				}
-				{score !== "" && parseInt(score) === 0 &&
+				{score !== "" && parseFloat(score) > 30 &&
 					<div className="flex justify-center">
 						{isConnected && (
 							<EASComponent account={account} />
 						)}
 					</div>
 				}
-
-
 				<p>{noScoreMessage}</p>
+				{isDisconnected && <p>Please click on Connect Wallet</p>}
+				{isConnected && !isSubmitted && score === "" && <p className="mt-2">First, Click on Submit Password to request your score</p>}
+				{isConnected && isSubmitted && score === "" && <p className="mt-2">Then, Click on Check Password to get your score</p>}
 			</div>
 		</div>
 	);
