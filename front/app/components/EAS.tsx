@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { EAS, Offchain, SchemaEncoder, SchemaRegistry } from "@ethereum-attestation-service/eas-sdk";
 import { ethers } from "ethers";
 import { useEthersSigner } from '../../ethers'
-
 import { SignerOrProvider } from '@ethereum-attestation-service/eas-sdk/dist/transaction';
 
 const getAttestation = async (eas:EAS, uid: string) => {
@@ -11,8 +10,8 @@ const getAttestation = async (eas:EAS, uid: string) => {
     console.log(attestation);
 }
 
-const attest = async (eas:EAS) => {
-    eas.connect(useEthersSigner());
+const attest = async (eas:EAS, signer: SignerOrProvider) => {
+    eas.connect(signer);
 
     // Initialize SchemaEncoder with the schema string
     const schemaEncoder = new SchemaEncoder("address user, string tier");
@@ -43,6 +42,7 @@ const attest = async (eas:EAS) => {
 export const EASComponent = () => {
 // 	const { isConnected } = useAccount()
 //     const { data: walletClient } = useWalletClient()
+    const signer = useEthersSigner()
 
     const EASContractAddress = "0xC2679fBD37d54388Ce493F1DB75320D236e1815e"; // Sepolia v0.26
 
@@ -65,7 +65,7 @@ const uid = "0x5134f511e0533f997e569dac711952dde21daf14b316f3cce23835defc82c065"
 
 // getAttestation(eas, uid)
 
-attest(eas)
+attest(eas, signer)
 	return (<></>
 	);
 }
