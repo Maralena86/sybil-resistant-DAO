@@ -4,7 +4,7 @@ import { shieldProof, shieldEmpty } from "@/public";
 import { Passport } from ".";
 import { useAccount } from "wagmi";
 import { useState } from "react";
-import { EASComponent } from ".";
+import { EASComponent, Modal } from ".";
 
 export const Card = () => {
 	const { isConnected, isDisconnected } = useAccount();
@@ -12,6 +12,7 @@ export const Card = () => {
 	const [score, setScore] = useState<string>("");
 	const [noScoreMessage, setNoScoreMessage] = useState<string>("");
 	const [account, setAccount] = useState<`0x${string}` | undefined>(undefined);
+	const [modal, setModal] = useState(false);
 
 	const scoreColor = () => {
 		if (score === '')
@@ -42,7 +43,9 @@ export const Card = () => {
 					{/* <Link href="#" className="text-gray-300">
 						There is a link{" "}
 					</Link> */}
-					<Image src={shieldEmpty} className="img-shield" alt="logo" />
+					<div onClick={() => { setModal(true) }}>
+						<Image src={shieldEmpty} className="img-shield" alt="logo" />
+					</div>
 					{/* <Image src={shieldProof} className="img-shield rotate" alt="logo" /> */}
 				</div>
 				{score === "" &&
@@ -57,17 +60,17 @@ export const Card = () => {
 							/>
 						)}
 					</div>}
-				{score !== "" && parseFloat(score) > 30 &&
+				{score !== "" && parseFloat(score) < 30 &&
 					<p>You need to go to {' '}
 						<a target="_blank" href="https://passport.gitcoin.co" className="underline">
 							Gitcoin Passport
 						</a>
 						{' '} to improve your score to minimum 30</p>
 				}
-				{score !== "" && parseFloat(score) < 30 &&
+				{score !== "" && parseFloat(score) > 30 &&
 					<div className="flex justify-center">
 						{isConnected && (
-							<EASComponent account={account} />
+							<EASComponent account={account} modal={modal} />
 						)}
 					</div>
 				}
@@ -76,6 +79,7 @@ export const Card = () => {
 				{isConnected && !isSubmitted && score === "" && <p className="mt-2">First, Click on Submit Password to request your score</p>}
 				{isConnected && isSubmitted && score === "" && <p className="mt-2">Then, Click on Check Password to get your score</p>}
 			</div>
+			{modal && <Modal setModal={setModal} tx={'0x7c76dc1cf621efecbc9ba9a765421557bb3cbb3e89343267ac3c62bc8b77fc1e'} />}
 		</div>
 	);
 };

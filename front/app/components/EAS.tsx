@@ -3,10 +3,11 @@ import { EAS, SchemaEncoder } from "@ethereum-attestation-service/eas-sdk";
 import { ethers } from "ethers";
 import { useEthersSigner } from '../../ethersConvert'
 import { EASContractAddress, schemaUID } from '../utils/contractAddress';
-import { usePrepareContractWrite, useContractWrite, useWaitForTransaction } from 'wagmi'
+import { usePrepareContractWrite, useContractWrite, useContractEvent } from 'wagmi'
 import { SBTContractAddress } from '../utils/contractAddress';
 import { ABI_SBT } from '../utils/ABI_SBT';
-import { Modal } from './Modal';
+// import { Modal } from './Modal';
+import { ToastContainer, toast } from 'react-toastify';
 
 export const EASComponent = ({ account }: {
     account: `0x${string}` | undefined
@@ -14,11 +15,14 @@ export const EASComponent = ({ account }: {
     const signer = useEthersSigner()
     const [disabled, setDisabled] = useState(false)
     const [uid, setUid] = useState('')
-    const [modal, setModal] = useState(false);
+    // const [modal, setModal] = useState(false);
     const [attested, setAttested] = useState(false);
+    // const notify = (text_notif: string) => toast(text_notif);
+
 
     const attest = async (eas: EAS, signer: any) => {
         eas.connect(signer);
+        // notify("Attestation Requested!")
 
         // Initialize SchemaEncoder with the schema string
         const schemaEncoder = new SchemaEncoder("address user, string tier");
@@ -38,6 +42,7 @@ export const EASComponent = ({ account }: {
         });
 
         const newAttestationUID = await tx.wait();
+        // notify("Attestation Received!")
         setUid(newAttestationUID)
         console.log("New attestation UID:", newAttestationUID);
         setAttested(true)
@@ -63,11 +68,26 @@ export const EASComponent = ({ account }: {
         address: SBTContractAddress,
         abi: ABI_SBT,
         functionName: 'mintTo',
-        args: [account, uid],
+        args: [account, '0xcb090e581c02a60623e14b0bb66a93211175ae511c9f6fd76b5ac1d2296623e8'],
+        onSuccess(data) {
+            // notify("Mint requested!")
+        },
     })
     const { data, write } = useContractWrite(config)
-    const { isLoading, isSuccess } = useWaitForTransaction({
-        hash: data?.hash,
+    // const { isLoading, isSuccess } = useWaitForTransaction({
+    //     hash: data?.hash,
+    //     onSuccess(data) {
+    //         setModal(true)
+    //     }
+    // })
+
+    useContractEvent({
+        address: SBTContractAddress,
+        abi: ABI_SBT,
+        eventName: 'Transfer',
+        listener(log) {
+            console.log(log)
+        },
     })
 
     return (
@@ -103,7 +123,7 @@ export const EASComponent = ({ account }: {
                         </svg>}
                     {disabled ? "Attesting..." : "Attest your score"}
                 </button >}
-            {attested && isSuccess &&
+            {attested &&
                 <button
                     disabled={disabled}
                     className={`flex text-base card-button font-semibold`}
@@ -134,7 +154,6 @@ export const EASComponent = ({ account }: {
                         </svg>}
                     {disabled ? "Minting..." : "Mint"}
                 </button >}
-            {isSuccess && modal && <Modal setModal={setModal} tx={data?.hash} />}
         </>
     );
 }
