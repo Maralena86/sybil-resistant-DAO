@@ -25,3 +25,8 @@
 ## Wallet Connect 
 Web3Modal https://github.com/Maralena86/sybil-resistant-DAO/blob/b0cbb7616521d0b0055df2095d3ab47f5d3383c9/front/app/page.tsx#L8
 https://twitter.com/0xyanc/status/1682902807920406528?s=20
+
+## EAS
+https://github.com/Maralena86/sybil-resistant-DAO/blob/ebd9a5e706e561a4bd225761faaabd4fcc58f3f8/forge/src/NFTFactory.sol#L114
+https://github.com/Maralena86/sybil-resistant-DAO/blob/ebd9a5e706e561a4bd225761faaabd4fcc58f3f8/front/app/components/EAS.tsx#L20
+
