@@ -34,8 +34,8 @@ contract NFTFactory is ERC721, Ownable {
         uint256 _maxSupply, // max supply of the nfts
         uint256 _maxPerMint, // max no. of nfts a user can mint in a single tx. also max they can mint into 1 wallet
         address artist, // artist address,
-        address _attestationContract
-        // string _baseuri
+        address _attestationContract,
+        string memory _baseuri
     ) ERC721(_name, _symbol) {
         PRICE = _price;
         MAX_SUPPLY = _maxSupply;
@@ -43,7 +43,7 @@ contract NFTFactory is ERC721, Ownable {
         _artist = payable(artist);
         _benefactor = payable(owner());
         attestationContract = _attestationContract;
-        // setBaseURI(_baseuri);
+        _baseTokenURI = _baseuri;
     }
 
     receive() external payable {}

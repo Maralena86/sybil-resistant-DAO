@@ -30,9 +30,11 @@ contract Deploy is Script {
           10000,
           10000,
           0x78f83b36468bFf785046974e21A1449b47FD7e74,
-          0xC2679fBD37d54388Ce493F1DB75320D236e1815e
+          0xC2679fBD37d54388Ce493F1DB75320D236e1815e,
+          'ipfs://bafkreibk2okt3fhwazigsspccn3uek42elwgtcguskyni26tcwhhi23ztm'
         );
         
         console.log("NFT Factory deployed: ", address(factory));
     }
 }
+

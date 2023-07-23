@@ -17,7 +17,7 @@ We achieve this using a combination of on-chain attestations, gitcoin passport, 
 | Linea                 | 0xc70a7Cff617E1F2EEdE7D2D18A6a4888DdF77219     |
 | Polygon zkEVM (Testnet)| [0xB02d792E290DEc52255d01b221686b4A11254268](https://testnet-zkevm.polygonscan.com/address/0xb02d792e290dec52255d01b221686b4a11254268)     |
 | Neon EVM (Devnet)     | [0x980fe87188338c69C210335763b2669ec8F256e0](https://devnet.neonscan.org/address/0x980fe87188338c69C210335763b2669ec8F256e0#contract)  |
-| Sepolia (Testnet)     | [0xC390303D04dC060e4458B72c8F7acD014D57E9ea](https://sepolia.etherscan.io/address/0xC390303D04dC060e4458B72c8F7acD014D57E9ea)
+| Sepolia (Testnet)     | [0xf13b66Fb0bc1BC35AB89b7647A4ea0E608aA799c](https://sepolia.etherscan.io/address/0xf13b66Fb0bc1BC35AB89b7647A4ea0E608aA799c)
 
 
 # Contract verification 
