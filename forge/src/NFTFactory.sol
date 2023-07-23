@@ -76,7 +76,7 @@ contract NFTFactory is ERC721, Ownable {
         Attestation memory att = IEAS(attestationContract).getAttestation(attestationUid);
         require(att.revocationTime == 0, "Attestation revoked");
         require(att.expirationTime == 0 || att.expirationTime > block.timestamp, "Attestation expired");
-        _safeMint(addr, totalSupply++);
+        _safeMint(addr, ++totalSupply);
     }
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {

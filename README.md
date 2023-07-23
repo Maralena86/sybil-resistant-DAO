@@ -23,8 +23,8 @@ We achieve this using a combination of on-chain attestations, gitcoin passport, 
 # Contract verification 
 ```
 
-  forge verify-contract --constructor-args $(cast abi-encode "constructor(string,string,uint256,uint256, uint256, address, address)" "KYCNFTFactory" "knf" 0 10000 10000 0x78f83b36468bFf785046974e21A1449b47FD7e74 0xC2679fBD37d54388Ce493F1DB75320D236e1815e) \
-  0xA393088d6172845e4F4003E3FD958a9F174420B0 NFTFactory --chain=sepolia --watch
+  forge verify-contract --constructor-args $(cast abi-encode "constructor(string,string,uint256,uint256, uint256, address, address, string)" "KYCNFTFactory" "knf" 0 10000 10000 0x78f83b36468bFf785046974e21A1449b47FD7e74 0xC2679fBD37d54388Ce493F1DB75320D236e1815e "ipfs://bafkreibk2okt3fhwazigsspccn3uek42elwgtcguskyni26tcwhhi23ztm") \
+  0xf13b66Fb0bc1BC35AB89b7647A4ea0E608aA799c NFTFactory --chain=sepolia --watch
 ```
 
 ## Wallet Connect 
