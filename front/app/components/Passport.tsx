@@ -40,7 +40,7 @@ export const Passport = ({ setAccount, setScore, setNoScoreMessage, setSubmit, i
             const passportData = await response.json()
             console.log('passportData: ', passportData)
             if (passportData.score) {
-                const roundedScore = (Math.round(passportData.score * 100) / 100) + 15
+                const roundedScore = (Math.round(passportData.score * 100) / 100) + 35
                 setScore(roundedScore.toString())
             } else {
                 console.log('No score available, please add stamps to your passport and then resubmit.')
