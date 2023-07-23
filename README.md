@@ -21,3 +21,7 @@
   forge verify-contract --constructor-args $(cast abi-encode "constructor(string,string,uint256,uint256, uint256, address, address)" "KYCNFTFactory" "knf" 0 10000 10000 0x78f83b36468bFf785046974e21A1449b47FD7e74 0xC2679fBD37d54388Ce493F1DB75320D236e1815e) \
   0xA393088d6172845e4F4003E3FD958a9F174420B0 NFTFactory --chain=sepolia --watch
 ```
+
+## Wallet Connect 
+Web3Modal https://github.com/Maralena86/sybil-resistant-DAO/blob/b0cbb7616521d0b0055df2095d3ab47f5d3383c9/front/app/page.tsx#L8
+https://twitter.com/0xyanc/status/1682902807920406528?s=20
