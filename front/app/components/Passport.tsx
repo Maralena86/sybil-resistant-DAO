@@ -3,8 +3,8 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import { useWalletClient, useAccount } from 'wagmi'
 
-const API_KEY = '6PNyWWCI.JAUjqps5kQIWgNAwd9S7CX1DxU1SPH1O'
-const SCORER_ID = '1692'
+const API_KEY = process.env.NEXT_PUBLIC_GITCOIN_API_KEY
+const SCORER_ID = process.env.NEXT_PUBLIC_SCORER_ID
 
 const headers = API_KEY ? ({
     'Content-Type': 'application/json',
