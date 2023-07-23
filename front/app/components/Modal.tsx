@@ -22,7 +22,7 @@ export const Modal = ({
 						<Image src={shieldProof} className="img-shield rotate" alt="logo" />
 						<p className="text-sm text-gray-500 px-8"></p>
 					</div>
-					<div className="text-center">Successfully minted your NFT!
+					<div className="text-center">Congratulations, you are a human!
 						<div>
 							<a href={`https://sepolia.etherscan.io/tx/${tx}`} className="underline">Etherscan</a>
 						</div>
