@@ -70,7 +70,7 @@ export const Card = () => {
 				{score !== "" && parseFloat(score) > 30 &&
 					<div className="flex justify-center">
 						{isConnected && (
-							<EASComponent account={account} modal={modal} />
+							<EASComponent account={account} />
 						)}
 					</div>
 				}
