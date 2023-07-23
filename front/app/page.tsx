@@ -1,16 +1,10 @@
 "use client";
 
-import {
-	EthereumClient,
-	w3mConnectors,
-	w3mProvider,
-} from "@web3modal/ethereum";
+import { EthereumClient, w3mConnectors, w3mProvider } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { arbitrum, mainnet, polygon, goerli, sepolia } from "wagmi/chains";
 import { Card, Footer, Header } from "./components";
-import { Modal } from "./components/Modal";
-import { useState } from "react";
 
 const chains = [sepolia, arbitrum, mainnet, polygon, goerli];
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!;
@@ -23,8 +17,6 @@ const wagmiConfig = createConfig({
 const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
 export default function Home() {
-	const [modal, setModal] = useState(false);
-
 	return (
 		<>
 			<WagmiConfig config={wagmiConfig}>
@@ -40,7 +32,6 @@ export default function Home() {
 			</WagmiConfig>
 			<div className="absolute">
 				<Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
-				{modal && <Modal setModal={setModal} />}
 			</div>
 		</>
 	);

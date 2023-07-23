@@ -1,4 +1,4 @@
-export const ABI_NFT =
+export const ABI_SBT =
 [
   {
     "inputs": [
@@ -300,14 +300,14 @@ export const ABI_NFT =
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "num",
-        "type": "uint256"
-      },
-      {
         "internalType": "address",
         "name": "addr",
         "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "attestationUid",
+        "type": "bytes32"
       }
     ],
     "name": "mintTo",

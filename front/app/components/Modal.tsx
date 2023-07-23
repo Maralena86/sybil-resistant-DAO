@@ -2,9 +2,10 @@ import { shieldProof } from "@/public";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 export const Modal = ({
-	setModal,
+	setModal, tx
 }: {
-	setModal: Dispatch<SetStateAction<boolean>>;
+	setModal: Dispatch<SetStateAction<boolean>>
+	tx: `0x${string}` | undefined
 }) => {
 	return (
 		<div
@@ -21,11 +22,16 @@ export const Modal = ({
 						<Image src={shieldProof} className="img-shield rotate" alt="logo" />
 						<p className="text-sm text-gray-500 px-8"></p>
 					</div>
+					<div className="text-center">Successfully minted your NFT!
+						<div>
+							<a href={`https://etherscan.io/tx/${tx}`} className="underline">Etherscan</a>
+						</div>
+					</div>
 					<div className="p-3  mt-2 text-center space-x-4 md:block">
-						<button 
-                        className="mb-2 md:mb-0  border border-sky-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full"
-                        onClick={()=>setModal(false)}
-                        >
+						<button
+							className="mb-2 md:mb-0  border border-sky-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full"
+							onClick={() => setModal(false)}
+						>
 							Close
 						</button>
 					</div>

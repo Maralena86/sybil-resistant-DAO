@@ -57,14 +57,14 @@ export const Card = () => {
 							/>
 						)}
 					</div>}
-				{score !== "" && parseFloat(score) < 30 &&
+				{score !== "" && parseFloat(score) > 30 &&
 					<p>You need to go to {' '}
 						<a target="_blank" href="https://passport.gitcoin.co" className="underline">
 							Gitcoin Passport
 						</a>
 						{' '} to improve your score to minimum 30</p>
 				}
-				{score !== "" && parseFloat(score) > 30 &&
+				{score !== "" && parseFloat(score) < 30 &&
 					<div className="flex justify-center">
 						{isConnected && (
 							<EASComponent account={account} />
