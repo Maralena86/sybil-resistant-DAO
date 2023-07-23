@@ -1,51 +1,17 @@
 // Based loosely on galaxyEggs
 // https://etherscan.io/address/0xa08126f5e1ed91a635987071e6ff5eb2aeb67c48#code
-
-/**
- * Generic Mintable NFT Sale contract
- * Create a collection with the following variables
- * - max supply - max number of nfts
- * - price - per nft
- * - Max items per mint
- * - pre mint - number of NFTs that can be preminted for free, by whitelisted users, or in a batch for admins e.g. for giveaways
- * - free mint - number of nfts to allow users to mint for free
- * Allow users to mint for a given price
- * Contract accumulates ETH from sales
- * Accumulated ETH can be withdrawn to a EOA or paymentSplitter to split gains across many users using withdrawAllToSplitter
- *
- * Admins can set the baseTokenURI before or after a drop
- * Setting the baseTokenURI after a drop, allows the contract to sell off NFTs with different rarities with the same price without cheating
- *
- * Advantages:
- - specify a price and change it later
- - create a limited supply collection, and add new items later
- - cheaper than rarible nft factory? 
- - add royalties on opensea and rarible later when the collection is imported
- */
-
-/** Code mods ju; 21 / 2023 - ETHglobal paris
-- change to -onluowner miny
-  */
-
-// Modified to reduce code size from:
-/**
- |  MintableNFTSale                            ·     14.382  │
-+ 
- |  PaymentSplitter                            ·      1.520  │
- => 15.902
-
- to  8.45
-  */
+// Soul bound token 
+// Can be minted to users but not transfered out
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.7;
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@eas/contracts/IEAS.sol";
 
-contract NFTFactory is ERC721Enumerable, Ownable {
+contract NFTFactory is ERC721, Ownable {
     using Strings for uint256;
 
     uint256 public PRICE;
@@ -54,6 +20,8 @@ contract NFTFactory is ERC721Enumerable, Ownable {
     bool public can_mint;
 
     string private _baseTokenURI;
+
+    uint256 public totalSupply;
 
     address payable private _artist;
     address payable private _benefactor;
@@ -67,6 +35,7 @@ contract NFTFactory is ERC721Enumerable, Ownable {
         uint256 _maxPerMint, // max no. of nfts a user can mint in a single tx. also max they can mint into 1 wallet
         address artist, // artist address,
         address _attestationContract
+        // string _baseuri
     ) ERC721(_name, _symbol) {
         PRICE = _price;
         MAX_SUPPLY = _maxSupply;
@@ -74,14 +43,7 @@ contract NFTFactory is ERC721Enumerable, Ownable {
         _artist = payable(artist);
         _benefactor = payable(owner());
         attestationContract = _attestationContract;
-
-        // Mint 5 to artist, 5 to owner, + 5 to owner for raffle
-        for (uint256 i; i < 5; i++) {
-            _mint(_artist, i);
-        }
-        for (uint256 j = 5; j < 15; j++) {
-            _mint(_benefactor, j);
-        }
+        // setBaseURI(_baseuri);
     }
 
     receive() external payable {}
@@ -114,23 +76,7 @@ contract NFTFactory is ERC721Enumerable, Ownable {
         Attestation memory att = IEAS(attestationContract).getAttestation(attestationUid);
         require(att.revocationTime == 0, "Attestation revoked");
         require(att.expirationTime == 0 || att.expirationTime > block.timestamp, "Attestation expired");
-        _safeMint(addr, totalSupply() + 1);
-
-    }
-
-    function mint(uint256 num) internal {
-        require(can_mint, "mint paused");
-
-        uint256 supply = totalSupply();
-
-        require(num <= MAX_PER_MINT, "2 many:call");
-        require(balanceOf(msg.sender) + num <= MAX_PER_MINT, "2 many:user"); // max n tokens per user
-        require(supply + num <= MAX_SUPPLY, "overlimit");
-        require(msg.value >= PRICE * num, "2 cheap");
-
-        for (uint256 i; i < num; i++) {
-            _safeMint(msg.sender, supply + i);
-        }
+        _safeMint(addr, totalSupply++);
     }
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
@@ -144,4 +90,10 @@ contract NFTFactory is ERC721Enumerable, Ownable {
     function getBaseURI() public view returns (string memory) {
         return _baseTokenURI;
     }
+    function _beforeTokenTransfer(address from, address to, uint256 firstTokenId, uint256 batchSize) internal virtual override {
+        if (from != address(0) && to != address(0)) {
+            revert("Soul bound token cannot be transferred out");
+        }
+    }
+
 }

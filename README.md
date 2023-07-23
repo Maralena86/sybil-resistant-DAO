@@ -1,10 +1,15 @@
 # Sybil Resistant DAO
 
+We allow any protocol or DAO to rapidly discern the authenticity of users.   
+We achieve this using a combination of on-chain attestations, gitcoin passport, and a Soul bound tokenn mint to qualified users.    
+
+
 # Forge / Smart contract deploy instructions 
 
 - Create forge sol deploy script in deploy/script
 - Create shell script to call deploy script in `deploy`
-- Grant perms: `chmod u+x 
+- Grant perms: `chmod u+x`
+- Run the script - `./deployX.sh`, abi found in out/ 
 
 # Deployments
 | Network               | Address                                          |
@@ -12,7 +17,7 @@
 | Linea                 | 0xc70a7Cff617E1F2EEdE7D2D18A6a4888DdF77219     |
 | Polygon zkEVM (Testnet)| [0xB02d792E290DEc52255d01b221686b4A11254268](https://testnet-zkevm.polygonscan.com/address/0xb02d792e290dec52255d01b221686b4a11254268)     |
 | Neon EVM (Devnet)     | [0x980fe87188338c69C210335763b2669ec8F256e0](https://devnet.neonscan.org/address/0x980fe87188338c69C210335763b2669ec8F256e0#contract)  |
-| Sepolia (Testnet)     | [0x2B6F60bec5a6Ee94935A76C5647D2E1C44A41F30](https://sepolia.etherscan.io/address/0x2B6F60bec5a6Ee94935A76C5647D2E1C44A41F30)
+| Sepolia (Testnet)     | [0xC390303D04dC060e4458B72c8F7acD014D57E9ea](https://sepolia.etherscan.io/address/0xC390303D04dC060e4458B72c8F7acD014D57E9ea)
 
 
 # Contract verification 
