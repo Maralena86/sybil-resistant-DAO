@@ -39,7 +39,7 @@ export const Card = () => {
 					Join the Sybil Resistant DAO
 				</p>
 				<div className="py-6">
-					<p className="text-4xl">Your score is: <span className={`${scoreColor()}`}>{score}</span></p>
+					<p className="text-4xl">Your score is: <span className={`${scoreColor()}`}>{score.substring(1, 5)}</span></p>
 					{/* <Link href="#" className="text-gray-300">
 						There is a link{" "}
 					</Link> */}

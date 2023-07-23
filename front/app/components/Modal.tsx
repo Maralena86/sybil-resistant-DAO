@@ -24,7 +24,7 @@ export const Modal = ({
 					</div>
 					<div className="text-center">Successfully minted your NFT!
 						<div>
-							<a href={`https://etherscan.io/tx/${tx}`} className="underline">Etherscan</a>
+							<a href={`https://sepolia.etherscan.io/tx/${tx}`} className="underline">Etherscan</a>
 						</div>
 					</div>
 					<div className="p-3  mt-2 text-center space-x-4 md:block">
