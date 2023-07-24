@@ -68,7 +68,7 @@ export const EASComponent = ({ account }: {
         address: SBTContractAddress,
         abi: ABI_SBT,
         functionName: 'mintTo',
-        args: [account, '0xcb090e581c02a60623e14b0bb66a93211175ae511c9f6fd76b5ac1d2296623e8'],
+        args: [account, ethers.utils.formatBytes32String(uid)],
         onSuccess(data) {
             // notify("Mint requested!")
         },
