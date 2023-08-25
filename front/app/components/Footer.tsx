@@ -5,7 +5,7 @@ export const Footer = () => {
 	return (
 		<section className="mt-5 mb-3 w-full flex justify-center gap">
 			<a
-				href="https://github.com/pgrandne/revolte"
+				href="https://github.com/Maralena86/sybil-resistant-DAO"
 				target="_blank"
 				rel="noreferrer"
 			>
