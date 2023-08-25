@@ -7,7 +7,6 @@ import { usePrepareContractWrite, useContractWrite, useContractEvent } from 'wag
 import { SBTContractAddress } from '../utils/contractAddress';
 import { ABI_SBT } from '../utils/ABI_SBT';
 // import { Modal } from './Modal';
-import { ToastContainer, toast } from 'react-toastify';
 
 export const EASComponent = ({ account }: {
     account: `0x${string}` | undefined
